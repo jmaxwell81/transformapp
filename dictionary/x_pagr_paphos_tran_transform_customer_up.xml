@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Transform Customer Update Import" max_length="40" name="x_pagr_paphos_tran_transform_customer_up" type="collection">
+        <element attributes="import_attribute_name=action,edge_encryption_enabled=true" label="Action" max_length="40" name="action" type="string"/>
+        <element attributes="import_attribute_name=application,edge_encryption_enabled=true" label="Application" max_length="40" name="application" type="string"/>
+        <element attributes="import_attribute_name=category,edge_encryption_enabled=true" label="Category" max_length="40" name="category" type="string"/>
+        <element attributes="import_attribute_name=comments,edge_encryption_enabled=true" label="Comments" max_length="40" name="comments" type="string"/>
+        <element attributes="import_attribute_name=name,edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="import_attribute_name=payload,edge_encryption_enabled=true" label="Payload" max_length="100000" name="payload" type="string"/>
+        <element attributes="import_attribute_name=payload_hash,edge_encryption_enabled=true" label="Payload hash" max_length="40" name="payload_hash" type="string"/>
+        <element attributes="import_attribute_name=remote_update_set,edge_encryption_enabled=true" label="Remote update set" max_length="40" name="remote_update_set" type="string"/>
+        <element attributes="import_attribute_name=replace_on_upgrade,edge_encryption_enabled=true" label="Replace on upgrade" max_length="40" name="replace_on_upgrade" type="string"/>
+        <element attributes="import_attribute_name=table,edge_encryption_enabled=true" label="Table" max_length="40" name="table" type="string"/>
+        <element attributes="import_attribute_name=target_name,edge_encryption_enabled=true" label="Target name" max_length="40" name="target_name" type="string"/>
+        <element attributes="import_attribute_name=type,edge_encryption_enabled=true" label="Type" max_length="40" name="type" type="string"/>
+        <element attributes="import_attribute_name=update_domain,edge_encryption_enabled=true" label="Update domain" max_length="40" name="update_domain" type="string"/>
+        <element attributes="import_attribute_name=update_guid,edge_encryption_enabled=true" label="Update guid" max_length="40" name="update_guid" type="string"/>
+        <element attributes="import_attribute_name=update_guid_history,edge_encryption_enabled=true" label="Update guid history" max_length="40" name="update_guid_history" type="string"/>
+        <element attributes="import_attribute_name=update_set,edge_encryption_enabled=true" label="Update set" max_length="40" name="update_set" type="string"/>
+        <element attributes="import_attribute_name=u_sys,edge_encryption_enabled=true" label="Sys_ID" max_length="40" name="u_sys" type="string"/>
+        <element attributes="import_attribute_name=view,edge_encryption_enabled=true" label="View" max_length="40" name="view" type="string"/>
+    </element>
+</database>

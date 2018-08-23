@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>loadingDialog</name>
+        <scoped_name>x_pagr_paphos_tran_loadingDialog</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 09:32:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3debbacf37b78300ca23021a54990eb7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>loadingDialog</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_ui_macro_3debbacf37b78300ca23021a54990eb7</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-26 09:32:18</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<script>
+		var whiteBackground = document.createElement('div');
+		whiteBackground.style.width = "100%";
+		whiteBackground.style.height = "100%";
+		whiteBackground.style.position = "fixed";
+		whiteBackground.style.left = 0;
+		whiteBackground.style.top = 0;
+		whiteBackground.style.zIndex = 999;
+		whiteBackground.style.background = "white";
+		document.body.appendChild(whiteBackground);
+		var activeTabs = document.getElementsByClassName('guide_tab_active');
+		for (var a=0; a!=activeTabs.length; a++) {
+			activeTabs[a].style.display="none";
+		}
+		showLoadingDialog();
+		addLateLoadEvent(function(){
+			for (var i=0; i!=activeTabs.length; i++) {
+				activeTabs[i].style.display="block";
+
+			}
+			whiteBackground.style.display="none";
+			hideLoadingDialog();
+		});
+	</script>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

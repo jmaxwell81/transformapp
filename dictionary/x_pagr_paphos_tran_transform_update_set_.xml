@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Transform Update Set Import" max_length="40" name="x_pagr_paphos_tran_transform_update_set_" type="collection">
+        <element attributes="import_attribute_name=application,edge_encryption_enabled=true" label="Application" max_length="40" name="application" type="string"/>
+        <element attributes="import_attribute_name=application_name,edge_encryption_enabled=true" label="Application name" max_length="40" name="application_name" type="string"/>
+        <element attributes="import_attribute_name=application_scope,edge_encryption_enabled=true" label="Application scope" max_length="40" name="application_scope" type="string"/>
+        <element attributes="import_attribute_name=application_version,edge_encryption_enabled=true" label="Application version" max_length="40" name="application_version" type="string"/>
+        <element attributes="import_attribute_name=collisions,edge_encryption_enabled=true" label="Collisions" max_length="40" name="collisions" type="string"/>
+        <element attributes="import_attribute_name=commit_date,edge_encryption_enabled=true" label="Commit date" max_length="40" name="commit_date" type="string"/>
+        <element attributes="import_attribute_name=deleted,edge_encryption_enabled=true" label="Deleted" max_length="40" name="deleted" type="string"/>
+        <element attributes="import_attribute_name=description,edge_encryption_enabled=true" label="Description" max_length="4000" name="description" type="string"/>
+        <element attributes="import_attribute_name=inserted,edge_encryption_enabled=true" label="Inserted" max_length="40" name="inserted" type="string"/>
+        <element attributes="import_attribute_name=name,edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="import_attribute_name=origin_sys_id,edge_encryption_enabled=true" label="Origin sys ID" max_length="40" name="origin_sys_id" type="string"/>
+        <element attributes="import_attribute_name=parent,edge_encryption_enabled=true" label="Parent" max_length="40" name="parent" type="string"/>
+        <element attributes="import_attribute_name=release_date,edge_encryption_enabled=true" label="Release date" max_length="40" name="release_date" type="string"/>
+        <element attributes="import_attribute_name=remote_base_update_set,edge_encryption_enabled=true" label="Remote base update set" max_length="40" name="remote_base_update_set" type="string"/>
+        <element attributes="import_attribute_name=remote_parent_id,edge_encryption_enabled=true" label="Remote parent ID" max_length="40" name="remote_parent_id" type="string"/>
+        <element attributes="import_attribute_name=remote_sys_id,edge_encryption_enabled=true" label="Remote sys ID" max_length="40" name="remote_sys_id" type="string"/>
+        <element attributes="import_attribute_name=state,edge_encryption_enabled=true" label="State" max_length="40" name="state" type="string"/>
+        <element attributes="import_attribute_name=summary,edge_encryption_enabled=true" label="Summary" max_length="4000" name="summary" type="string"/>
+        <element attributes="import_attribute_name=updated,edge_encryption_enabled=true" label="Updated" max_length="40" name="updated" type="string"/>
+        <element attributes="import_attribute_name=update_set,edge_encryption_enabled=true" label="Update set" max_length="40" name="update_set" type="string"/>
+        <element attributes="import_attribute_name=update_source,edge_encryption_enabled=true" label="Update source" max_length="40" name="update_source" type="string"/>
+        <element label="Sys_Id" max_length="40" name="u_sys_id" type="string"/>
+    </element>
+</database>

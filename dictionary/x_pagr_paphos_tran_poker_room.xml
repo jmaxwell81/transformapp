@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" extends="x_pagr_paphos_tran_paphos_transform_table" label="Poker Room" max_length="40" name="x_pagr_paphos_tran_poker_room" type="collection">
+        <element label="Acceptance criteria" max_length="8000" name="acceptance_criteria" read_only="true" type="html"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Blocked" max_length="40" name="blocked" type="boolean"/>
+        <element label="Blocked reason" max_length="4000" name="blocked_reason" type="string"/>
+        <element label="Expected number of votes" max_length="40" name="expected_number_of_votes" type="integer"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="Number of votes" max_length="40" name="number_of_votes" read_only="true" type="integer"/>
+        <element label="Result" max_length="40" name="result" type="integer"/>
+        <element label="Sprint" max_length="32" name="sprint" reference="x_pagr_paphos_tran_sprint" type="reference"/>
+        <element label="Story" max_length="32" name="story" reference="x_pagr_paphos_tran_story_result" type="reference"/>
+        <index name="index">
+            <element name="sprint"/>
+        </index>
+        <index name="index2">
+            <element name="story"/>
+        </index>
+    </element>
+</database>

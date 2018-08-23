@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_related sys_domain="global" table="x_pagr_paphos_tran_product" version="2" view="">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Product - Default view" name="x_pagr_paphos_tran_product" related_list="NULL" sys_domain="global" view="Default view">895dd13237fb4300ca23021a54990e8d</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>x_pagr_paphos_tran_release.product</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-25 08:00:21</sys_created_on>
+            <sys_id>455dd13237fb4300ca23021a54990e8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-25 08:00:21</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Product - Default view" name="x_pagr_paphos_tran_product" related_list="NULL" sys_domain="global" view="Default view">895dd13237fb4300ca23021a54990e8d</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>x_pagr_paphos_tran_theme.product</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-25 08:00:21</sys_created_on>
+            <sys_id>4d5dd13237fb4300ca23021a54990e8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-25 08:00:21</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Product - Default view" name="x_pagr_paphos_tran_product" related_list="NULL" sys_domain="global" view="Default view">895dd13237fb4300ca23021a54990e8d</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>x_pagr_paphos_tran_epic.product</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-25 08:00:21</sys_created_on>
+            <sys_id>415dd13237fb4300ca23021a54990e8f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-25 08:00:21</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Product - Default view" name="x_pagr_paphos_tran_product" related_list="NULL" sys_domain="global" view="Default view">895dd13237fb4300ca23021a54990e8d</list_id>
+            <order_by/>
+            <position>3</position>
+            <related_list>x_pagr_paphos_tran_story.product</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-25 08:00:21</sys_created_on>
+            <sys_id>455dd13237fb4300ca23021a54990e8f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-25 08:00:21</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Product - Default view</calculated_name>
+            <filter/>
+            <name>x_pagr_paphos_tran_product</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-25 08:00:21</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>895dd13237fb4300ca23021a54990e8d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Product - Default view</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_ui_related_x_pagr_paphos_tran_product_null</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-25 08:00:21</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

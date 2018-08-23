@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_pagr_paphos_tran.pokerUtils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>pokerUtils</name>
+        <script><![CDATA[var pokerUtils = Class.create();
+pokerUtils.prototype = {
+	initialize: function() {
+	},
+	
+	createResultSet: function(roomID,storyID){
+		var story = new GlideRecord('x_pagr_paphos_tran_story');
+		if (story.get(storyID)){
+			var storyResult = new GlideRecord('x_pagr_paphos_tran_story_result');
+			storyResult.initialize();
+			storyResult.room = roomID;
+			storyResult.story = story.sys_id;
+			if (story.points != ''){
+				storyResult.end_result = story.points;
+				storyResult.state = 4;
+			} else {
+				storyResult.state = 5;
+			}
+			if (story.blocked){
+				storyResult.end_result = '';
+				storyResult.state = 4;
+				storyResult.blocked = 1;
+				storyResult.blocked_reason = story.blocked_reason;
+			}
+			storyResult.insert();
+		}
+	},
+	
+	
+	type: 'pokerUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 09:39:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9d6d3e0337f78300ca23021a54990e40</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>pokerUtils</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_script_include_9d6d3e0337f78300ca23021a54990e40</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-02-02 10:59:23</sys_updated_on>
+    </sys_script_include>
+</record_update>

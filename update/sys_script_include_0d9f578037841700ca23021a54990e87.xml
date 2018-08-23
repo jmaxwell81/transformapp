@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_pagr_paphos_tran.transformUtils</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>transformUtils</name>
+        <script><![CDATA[var transformUtils = Class.create();
+transformUtils.prototype = {
+	initialize: function() {
+	},
+	
+	getStories: function(getStoriesRelease, getStoriesProduct) {
+		//gs.info("TRF Triggered transformUtils getStories");
+		
+		getStoriesRelease = getStoriesRelease.toString();
+		getStoriesProduct = getStoriesProduct.toString();
+		
+		//first Retrieve all stories filtered on epic(s) and getStoriesProduct.
+		
+		try {
+			var getStoriesR = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Stories Import', 'Default GET');
+			getStoriesR.setStringParameterNoEscape('release', getStoriesRelease);
+			getStoriesR.setStringParameterNoEscape('product', getStoriesProduct);
+			
+			var getStoriesResponse = getStoriesR.execute();
+			var getStoriesResponseBody = getStoriesResponse.getBody();
+			var getStoriesHttpStatus = getStoriesResponse.getStatusCode();
+			
+			
+			var getStoriesParsed = JSON.parse(getStoriesResponseBody);
+			
+		}
+		catch(getStoriesEx) {
+			var message = getStoriesEx.getMessage();
+		}
+		// Next we need to transform the stories to transform stories
+		
+		//Create a new import set
+		var getStoriesCrImpSet = new GlideRecord('sys_import_set');
+		getStoriesCrImpSet.initialize();
+		getStoriesCrImpSet.mode = 'synchronous';
+		getStoriesCrImpSet.table_name = 'x_pagr_paphos_tran_transform_story_impor'; //Set the extended importset table
+		getStoriesCrImpSet.state = 'loading';
+		getStoriesCrImpSet.insert();
+		var getStoriesrestGR = new GlideRecord('x_pagr_paphos_tran_transform_story_impor'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getStoriesParsed = getStoriesParsed;
+		var storySysId = [];
+		for(var getStoriesobj in getStoriesParsed){
+			if(getStoriesParsed.hasOwnProperty(getStoriesobj)){
+				for(var getStoriesprop in getStoriesParsed[getStoriesobj]){
+					if(getStoriesParsed[getStoriesobj].hasOwnProperty(getStoriesprop)){
+						
+						getStoriesrestGR.initialize();
+						getStoriesrestGR.number = getStoriesParsed[getStoriesobj][getStoriesprop].number;
+						getStoriesrestGR.product = getStoriesParsed[getStoriesobj][getStoriesprop].product.value;
+						getStoriesrestGR.epic = getStoriesParsed[getStoriesobj][getStoriesprop].epic.value;
+						getStoriesrestGR.release = getStoriesParsed[getStoriesobj][getStoriesprop].release.value;
+						getStoriesrestGR.theme = getStoriesParsed[getStoriesobj][getStoriesprop].theme.value;
+						getStoriesrestGR.sprint = getStoriesParsed[getStoriesobj][getStoriesprop].sprint.value;
+						getStoriesrestGR.points = getStoriesParsed[getStoriesobj][getStoriesprop].points;
+						getStoriesrestGR.state = getStoriesParsed[getStoriesobj][getStoriesprop].state;
+						getStoriesrestGR.product_owner = getStoriesParsed[getStoriesobj][getStoriesprop].product_owner;
+						getStoriesrestGR.epic_owner = getStoriesParsed[getStoriesobj][getStoriesprop].epic_owner;
+						getStoriesrestGR.type = getStoriesParsed[getStoriesobj][getStoriesprop].type;
+						getStoriesrestGR.classification = getStoriesParsed[getStoriesobj][getStoriesprop].classification;
+						getStoriesrestGR.priority = getStoriesParsed[getStoriesobj][getStoriesprop].priority;
+						getStoriesrestGR.assigned_to = getStoriesParsed[getStoriesobj][getStoriesprop].assigned_to.value;
+						getStoriesrestGR.blocked = getStoriesParsed[getStoriesobj][getStoriesprop].blocked;
+						getStoriesrestGR.short_description = getStoriesParsed[getStoriesobj][getStoriesprop].short_description;
+						getStoriesrestGR.acceptancecriteria = getStoriesParsed[getStoriesobj][getStoriesprop].acceptance_criteria;
+						getStoriesrestGR.description = getStoriesParsed[getStoriesobj][getStoriesprop].description;
+						getStoriesrestGR.developed_how = getStoriesParsed[getStoriesobj][getStoriesprop].u_developed_how;
+						getStoriesrestGR.developed_where = getStoriesParsed[getStoriesobj][getStoriesprop].u_developed_where;
+						getStoriesrestGR.standard_optional = getStoriesParsed[getStoriesobj][getStoriesprop].u_standard_optional;
+						getStoriesrestGR.dependancy_with_other_story = getStoriesParsed[getStoriesobj][getStoriesprop].dependancy_with_other_story;
+						getStoriesrestGR.impulse4_summary = getStoriesParsed[getStoriesobj][getStoriesprop].u_impulse4_summary;
+						getStoriesrestGR.update_set_sequence = getStoriesParsed[getStoriesobj][getStoriesprop].update_set_sequence;
+						getStoriesrestGR.opened_at = getStoriesParsed[getStoriesobj][getStoriesprop].opened_at;
+						getStoriesrestGR.opened_by = getStoriesParsed[getStoriesobj][getStoriesprop].opened_by.value;
+						getStoriesrestGR.sys_updated_on = getStoriesParsed[getStoriesobj][getStoriesprop].sys_updated_on;
+						getStoriesrestGR.sys_updated_by = getStoriesParsed[getStoriesobj][getStoriesprop].sys_updated_by;
+						getStoriesrestGR.u_sys_id = getStoriesParsed[getStoriesobj][getStoriesprop].sys_id;
+						getStoriesrestGR.sys_import_set = getStoriesCrImpSet.sys_id; //This is the sys_id from import set above
+						getStoriesrestGR.insert();
+					}
+					var length = storySysId.length;
+					var ignoreThis = false;
+ for (var i = 0; i < length; i++) {
+ if (storySysId[i] == getStoriesParsed[getStoriesobj][getStoriesprop].sys_id){
+  ignoreThis = true;
+ }
+ }
+					if (ignoreThis == false){
+					storySysId.push(getStoriesParsed[getStoriesobj][getStoriesprop].sys_id);
+				}
+				}
+				
+					}
+				
+			
+		}
+			//gs.info("getStories " + storySysId);
+for (var storyID in storySysId) {
+					if (storySysId.hasOwnProperty(storyID)) {
+						
+						this.getUpdateSetChild(storySysId[storyID]);
+}
+}
+	
+		return;
+	},
+	
+	getProducts: function(getProductsproduct) {
+		
+		//gs.info("Triggered transformUtils getProducts");
+		
+		getProductsproduct = getProductsproduct.toString();
+		
+		//first Retrieve all Product.
+		
+		try {
+			var getProductsr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Product Import', 'Default GET');
+			getProductsr.setStringParameterNoEscape('product', getProductsproduct);
+			
+			var getProductsresponse = getProductsr.execute();
+			var getProductsresponseBody = getProductsresponse.getBody();
+			var getProductshttpStatus = getProductsresponse.getStatusCode();
+			var getProductsparsed = JSON.parse(getProductsresponseBody);
+		}
+		catch(getProductsex) {
+			var getProductsmessage = getProductsex.getMessage();
+		}
+		
+		// Next we need to transform the products to transform products
+		
+		//Create a new import set
+		var getProductscrImpSet = new GlideRecord('sys_import_set');
+		getProductscrImpSet.initialize();
+		getProductscrImpSet.mode = 'synchronous';
+		getProductscrImpSet.table_name = 'x_pagr_paphos_tran_transform_product_imp'; //Set the extended importset table
+		getProductscrImpSet.state = 'loading';
+		getProductscrImpSet.insert();
+		var getProductsrestGR = new GlideRecord('x_pagr_paphos_tran_transform_product_imp'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getProductsparsed = getProductsparsed;
+		for(var getProductsobj in getProductsparsed){
+			if(getProductsparsed.hasOwnProperty(getProductsobj)){
+				for(var getProductsprop in getProductsparsed[getProductsobj]){
+					if(getProductsparsed[getProductsobj].hasOwnProperty(getProductsprop)){
+						
+						getProductsrestGR.initialize();
+						getProductsrestGR.number = getProductsparsed[getProductsobj][getProductsprop].number;
+						getProductsrestGR.description = getProductsparsed[getProductsobj][getProductsprop].description;
+						getProductsrestGR.planned_end = getProductsparsed[getProductsobj][getProductsprop].planned_end;
+						getProductsrestGR.planned_start = getProductsparsed[getProductsobj][getProductsprop].planned_start;
+						getProductsrestGR.product_owner = getProductsparsed[getProductsobj][getProductsprop].owner.value;
+						getProductsrestGR.short_description = getProductsparsed[getProductsobj][getProductsprop].short_description;
+						getProductsrestGR.state = getProductsparsed[getProductsobj][getProductsprop].state;
+						getProductsrestGR.u_sys_id = getProductsparsed[getProductsobj][getProductsprop].sys_id;
+						getProductsrestGR.sys_import_set = getProductscrImpSet.sys_id; //This is the sys_id from import set above
+						getProductsrestGR.insert();
+					}
+					
+				}
+			}
+		}
+		return;
+	},
+	
+	getReleases: function(getReleasesrelease, getReleasesproduct) {
+		
+				//gs.info("TRF Triggered transformUtils getReleases");
+
+		
+		getReleasesrelease = getReleasesrelease.toString();
+		
+		//first Retrieve all Products.
+		
+		try {
+			var getReleasesr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Release Import', 'Default GET');
+			getReleasesr.setStringParameterNoEscape('release', getReleasesrelease);
+			
+			var getReleasesresponse = getReleasesr.execute();
+			var getReleasesresponseBody = getReleasesresponse.getBody();
+			var getReleaseshttpStatus = getReleasesresponse.getStatusCode();
+			var getReleasesparsed = JSON.parse(getReleasesresponseBody);
+			
+			//gs.info('TRF getReleases: ' + getReleasesresponseBody);
+		}
+		catch(getReleasesex) {
+			var getReleasesmessage = getReleasesex.getMessage();
+		}
+		
+		
+
+		
+		// Next we need to transform the releases to transform releases
+		
+		//Create a new import set
+		var getReleasescrImpSet = new GlideRecord('sys_import_set');
+		getReleasescrImpSet.initialize();
+		getReleasescrImpSet.mode = 'synchronous';
+		getReleasescrImpSet.table_name = 'x_pagr_paphos_tran_transform_release_imp'; //Set the extended importset table
+		getReleasescrImpSet.state = 'loading';
+		getReleasescrImpSet.insert();
+		var getReleasesrestGR = new GlideRecord('x_pagr_paphos_tran_transform_release_imp'); //Query extended import set rows table
+					//gs.info('TRF created import set');
+
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getReleasesparsed = getReleasesparsed;
+		for(var getReleasesobj in getReleasesparsed){
+			if(getReleasesparsed.hasOwnProperty(getReleasesobj)){
+				for(var getReleasesprop in getReleasesparsed[getReleasesobj]){
+					if(getReleasesparsed[getReleasesobj].hasOwnProperty(getReleasesprop)){
+						//gs.info('TRF looping through releases');
+
+						getReleasesrestGR.initialize();
+						getReleasesrestGR.u_number = getReleasesparsed[getReleasesobj][getReleasesprop].number;
+						getReleasesrestGR.u_description = getReleasesparsed[getReleasesobj][getReleasesprop].description;
+						getReleasesrestGR.u_short_description = getReleasesparsed[getReleasesobj][getReleasesprop].short_description;
+						getReleasesrestGR.u_state = getReleasesparsed[getReleasesobj][getReleasesprop].state;
+						getReleasesrestGR.u_sys_id = getReleasesparsed[getReleasesobj][getReleasesprop].sys_id;
+						getReleasesrestGR.sys_import_set = getReleasescrImpSet.sys_id; //This is the sys_id from import set above
+						getReleasesrestGR.insert();
+						/*
+						var getReleasesm2m = new GlideRecord('m2m_product_release');
+						getReleasesm2m.initialize();
+						getReleasesm2m.model = getReleasesproduct;
+						getReleasesm2m.release = getReleasesrelease;
+						getReleasesm2m.insert();
+						*/
+						//gs.info('TRF looping through releases after insert');
+
+					}
+					
+				}
+			}
+				//gs.info('TRF after loops');
+		}
+		//gs.info("TRF getRelease before return");
+		return;
+	},
+	
+	
+	getEpics: function(getEpicsproduct) {
+		
+		//gs.info("TRF Triggered transformUtils getEpicsproduct");
+
+		
+		getEpicsproduct = getEpicsproduct.toString();
+		
+		//first Retrieve all Epics.
+		
+		try {
+			var getEpicsr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Epic Import', 'Default GET');
+			getEpicsr.setStringParameterNoEscape('product', getEpicsproduct);
+			
+			var getEpicsresponse = getEpicsr.execute();
+			var getEpicsresponseBody = getEpicsresponse.getBody();
+			var getEpicshttpStatus = getEpicsresponse.getStatusCode();
+			var getEpicsparsed = JSON.parse(getEpicsresponseBody);
+			//gs.info('TRF getEpicsresponseBody: ' + getEpicsresponseBody);
+		}
+		catch(getEpicsex) {
+			var getEpicsmessage = getEpicsex.getMessage();
+		}
+		// Next we need to transform the Epics to transform Epics
+		
+		//Create a new import set
+		var getEpicscrImpSet = new GlideRecord('sys_import_set');
+		getEpicscrImpSet.initialize();
+		getEpicscrImpSet.mode = 'synchronous';
+		getEpicscrImpSet.table_name = 'x_pagr_paphos_tran_transform_epic_import'; //Set the extended importset table
+		getEpicscrImpSet.state = 'loading';
+		getEpicscrImpSet.insert();
+		var getEpicsrestGR = new GlideRecord('x_pagr_paphos_tran_transform_epic_import'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getEpicsparsed = getEpicsparsed;
+		for(var getEpicsobj in getEpicsparsed){
+			if(getEpicsparsed.hasOwnProperty(getEpicsobj)){
+				for(var getEpicsprop in getEpicsparsed[getEpicsobj]){
+					if(getEpicsparsed[getEpicsobj].hasOwnProperty(getEpicsprop)){
+						
+						getEpicsrestGR.initialize();
+						getEpicsrestGR.number = getEpicsparsed[getEpicsobj][getEpicsprop].number;
+						getEpicsrestGR.description = getEpicsparsed[getEpicsobj][getEpicsprop].description;
+						getEpicsrestGR.short_description = getEpicsparsed[getEpicsobj][getEpicsprop].short_description;
+						getEpicsrestGR.product = getEpicsparsed[getEpicsobj][getEpicsprop].product.value;
+						getEpicsrestGR.u_sys_id = getEpicsparsed[getEpicsobj][getEpicsprop].sys_id;
+						getEpicsrestGR.theme = getEpicsparsed[getEpicsobj][getEpicsprop].theme.value;
+						//getEpicsrestGR.epic_owner = getEpicsparsed[getEpicsobj][getEpicsprop].epic_owner.value;
+						getEpicsrestGR.state = getEpicsparsed[getEpicsobj][getEpicsprop].state;
+						getEpicsrestGR.sys_import_set = getEpicscrImpSet.sys_id; //This is the sys_id from import set above
+						getEpicsrestGR.insert();
+					}
+					
+				}
+			}
+		}
+		return;
+	},
+	
+	getUpdateSetChild: function(getUpdateSetChildstory) {
+		
+		//gs.info("Triggered transformUtils getUpdateSetChild");
+
+		
+		getUpdateSetChildstory = getUpdateSetChildstory.toString();
+		//gs.info("transformUtils getUpdateSetChild Story: " + getUpdateSetChildstory);
+		
+		
+		var queryParent = new GlideRecord('sys_remote_update_set');
+		queryParent.addQuery('sys_id', getUpdateSetChildstory);
+		queryParent.query();
+		if (!queryParent.hasNext()){
+		//first Retrieve all Update Sets.
+		
+		try {
+			var getUpdateSetChildr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Update Set Import', 'Default GET Childs');
+			getUpdateSetChildr.setStringParameterNoEscape('story', getUpdateSetChildstory);
+			
+			var getUpdateSetChildresponse = getUpdateSetChildr.execute();
+			var getUpdateSetChildresponseBody = getUpdateSetChildresponse.getBody();
+			var getUpdateSetChildhttpStatus = getUpdateSetChildresponse.getStatusCode();
+			
+			//gs.info("getUpdateSetChild Parsed: " + getUpdateSetChildresponseBody);
+			
+			
+			var getUpdateSetChildparsed = JSON.parse(getUpdateSetChildresponseBody);
+		}
+		catch(getUpdateSetChildex) {
+			var getUpdateSetChildmessage = getUpdateSetChildex.getMessage();
+			//gs.info("getUpdateSetChild Failed: " + getUpdateSetChildmessage);
+		}
+		
+		// Next we need to transform the update sets and relate back to their parents.
+		
+		//Create a new import set
+		var getUpdateSetChildcrImpSet = new GlideRecord('sys_import_set');
+		getUpdateSetChildcrImpSet.initialize();
+		getUpdateSetChildcrImpSet.mode = 'synchronous';
+		getUpdateSetChildcrImpSet.table_name = 'x_pagr_paphos_tran_transform_update_set_'; //Set the extended importset table
+		getUpdateSetChildcrImpSet.state = 'loading';
+		getUpdateSetChildcrImpSet.insert();
+		var getUpdateSetChildrestGR = new GlideRecord('x_pagr_paphos_tran_transform_update_set_'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getUpdateSetChildparsed = getUpdateSetChildparsed;
+		
+		var getUpdateSetChildchildUpDateSetSysID = [];
+		for(var getUpdateSetChildobj in getUpdateSetChildparsed){
+			if(getUpdateSetChildparsed.hasOwnProperty(getUpdateSetChildobj)){
+				for(var getUpdateSetChildprop in getUpdateSetChildparsed[getUpdateSetChildobj]){
+					if(getUpdateSetChildparsed[getUpdateSetChildobj].hasOwnProperty(getUpdateSetChildprop)){
+						
+						getUpdateSetChildrestGR.initialize();
+						getUpdateSetChildrestGR.application = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].application.value;
+						getUpdateSetChildrestGR.description = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].description;
+						getUpdateSetChildrestGR.name = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].name;
+						getUpdateSetChildrestGR.parent = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].parent.value;
+						getUpdateSetChildrestGR.state = 'loaded';
+						getUpdateSetChildrestGR.remote_sys_id = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].sys_id;
+						getUpdateSetChildrestGR.u_sys_id = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].sys_id;
+						getUpdateSetChildrestGR.application_name = getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].application_name;
+						getUpdateSetChildrestGR.sys_import_set = getUpdateSetChildcrImpSet.sys_id; //This is the sys_id from import set above
+						getUpdateSetChildrestGR.insert();
+						this._getCustomerUpdates(getUpdateSetChildrestGR.u_sys_id);
+						
+						
+						if (getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].parent.value){
+							var getUpdateSetChildvalues = [getUpdateSetChildrestGR.parent, getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].sys_id];
+							//getUpdateSetChildchildUpDateSetSysID.parent.push(getUpdateSetChildrestGR.parent);
+							//getUpdateSetChildchildUpDateSetSysID.id.push(getUpdateSetChildparsed[getUpdateSetChildobj][getUpdateSetChildprop].sys_id);
+							getUpdateSetChildchildUpDateSetSysID.push(getUpdateSetChildvalues);
+						}
+						else{
+							
+						}
+					}
+				}
+				for (var getUpdateSetChildchildUpDateSetid in getUpdateSetChildchildUpDateSetSysID){
+					this._getUpdateSetParent(getUpdateSetChildchildUpDateSetSysID[getUpdateSetChildchildUpDateSetid][0], getUpdateSetChildchildUpDateSetSysID[getUpdateSetChildchildUpDateSetid][1]);
+					
+				}
+			}
+			
+		}
+		}
+		//gs.info('getUpdateSetChild voor return');
+		return;
+	},
+	
+	
+	_getUpdateSetParent: function(getUpdateSetParentparent, getUpdateSetParentchild) {
+				//gs.info("Triggered transformUtils _getUpdateSetParent");
+
+		//gs.info("transformUtils _getUpdateSetParent Parent: " + getUpdateSetParentparent + " Child: " + getUpdateSetParentchild);
+		
+		getUpdateSetParentparent = getUpdateSetParentparent.toString();
+		getUpdateSetParentchild = getUpdateSetParentchild.toString();
+		
+		var queryParent = new GlideRecord('sys_remote_update_set');
+		queryParent.addQuery('sys_id', getUpdateSetParentparent);
+		queryParent.query();
+		if (!queryParent.hasNext()){
+		
+		//first Retrieve all parents.
+		
+		try {
+			var getUpdateSetParentr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Update Set Import', 'Default GET Parent');
+			getUpdateSetParentr.setStringParameterNoEscape('parent', getUpdateSetParentparent);
+			
+			var getUpdateSetParentresponse = getUpdateSetParentr.execute();
+			var getUpdateSetParentresponseBody = getUpdateSetParentresponse.getBody();
+			var getUpdateSetParenthttpStatus = getUpdateSetParentresponse.getStatusCode();
+			var getUpdateSetParentparsedParent = JSON.parse(getUpdateSetParentresponseBody);
+		}
+		catch(getUpdateSetParentex) {
+			var getUpdateSetParentmessage = getUpdateSetParentex.getMessage();
+		}
+		
+		// Next we need to transform the sets
+		
+		//Create a new import set
+		var getUpdateSetParentcrImpSet = new GlideRecord('sys_import_set');
+		getUpdateSetParentcrImpSet.initialize();
+		getUpdateSetParentcrImpSet.mode = 'synchronous';
+		getUpdateSetParentcrImpSet.table_name = 'x_pagr_paphos_tran_transform_update_set_'; //Set the extended importset table
+		getUpdateSetParentcrImpSet.state = 'loading';
+		getUpdateSetParentcrImpSet.insert();
+		var getUpdateSetParentrestGR = new GlideRecord('x_pagr_paphos_tran_transform_update_set_'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		var getUpdateSetParentparentUpdateSetSysID = [];
+		var getUpdateSetParentparsedParent = getUpdateSetParentparsedParent;
+		for(var getUpdateSetParentobj in getUpdateSetParentparsedParent){
+			if(getUpdateSetParentparsedParent.hasOwnProperty(getUpdateSetParentobj)){
+				for(var getUpdateSetParentprop in getUpdateSetParentparsedParent[getUpdateSetParentobj]){
+					if(getUpdateSetParentparsedParent[getUpdateSetParentobj].hasOwnProperty(getUpdateSetParentprop)){
+						
+						var getUpdateSetParentparentSet = new GlideRecord('sys_remote_update_set');
+						getUpdateSetParentparentSet.addQuery('remote_sys_id', getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].sys_id);
+						getUpdateSetParentparentSet.query();
+						if(!getUpdateSetParentparentSet.hasNext()){
+							
+							getUpdateSetParentrestGR.initialize();
+							getUpdateSetParentrestGR.application = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].application.value;
+							getUpdateSetParentrestGR.description = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].description;
+							getUpdateSetParentrestGR.name = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].name;
+							getUpdateSetParentrestGR.state = 'loaded';
+							getUpdateSetParentrestGR.parent = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].parent.value;
+							getUpdateSetParentrestGR.u_sys_id = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].sys_id;
+							getUpdateSetParentrestGR.remote_sys_id = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].sys_id;
+							getUpdateSetParentrestGR.application_name = getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].application_name;
+							
+							getUpdateSetParentrestGR.sys_import_set = getUpdateSetParentcrImpSet.sys_id; //This is the sys_id from import set above
+							getUpdateSetParentrestGR.insert();
+							
+							
+							var getUpdateSetParentparentSet2 = new GlideRecord('sys_remote_update_set');
+							getUpdateSetParentparentSet2.addQuery('remote_sys_id', getUpdateSetParentparsedParent[getUpdateSetParentobj][getUpdateSetParentprop].sys_id);
+							getUpdateSetParentparentSet2.query();
+							getUpdateSetParentparentSet2.next();
+							
+							var getUpdateSetParentchildSet = new GlideRecord('sys_remote_update_set');
+							getUpdateSetParentchildSet.addQuery('remote_sys_id', getUpdateSetParentchild);
+							getUpdateSetParentchildSet.query();
+							getUpdateSetParentchildSet.next();
+							getUpdateSetParentchildSet.parent = getUpdateSetParentparentSet2.sys_id;
+							getUpdateSetParentchildSet.update();
+						}
+						else{
+							getUpdateSetParentparentSet.next();
+							
+							
+							var getUpdateSetParentchildSet = new GlideRecord('sys_remote_update_set');
+							getUpdateSetParentchildSet.addQuery('remote_sys_id', getUpdateSetParentchild);
+							getUpdateSetParentchildSet.query();
+							getUpdateSetParentchildSet.next();
+							getUpdateSetParentchildSet.parent = getUpdateSetParentparentSet.sys_id;
+							getUpdateSetParentchildSet.update();
+						}
+						getUpdateSetParentparentUpdateSetSysID.push(getUpdateSetParentrestGR.u_sys_id);
+					}
+				}
+				for (var getUpdateSetParentparentUpdateSetid in getUpdateSetParentparentUpdateSetSysID){
+					this._getCustomerUpdates(getUpdateSetParentparentUpdateSetSysID[getUpdateSetParentparentUpdateSetid]);
+				}
+			}
+			
+		}
+		}
+		//gs.info('_getUpdateSetParent voor return');
+		
+		return;
+		
+	},
+	
+	_getCustomerUpdates: function(getCustomerUpdatesupdateSet) {
+		
+		//gs.info("Triggered transformUtils _getCustomerUpdates");
+
+		
+		//gs.info('updateSet: ' + getCustomerUpdatesupdateSet,"Transform");
+		
+		getCustomerUpdatesupdateSet = getCustomerUpdatesupdateSet.toString();
+		
+		//first Retrieve all Customer Updates.
+		
+		try {
+			var getCustomerUpdatesr = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Customer Update Import', 'Default GET');
+			getCustomerUpdatesr.setStringParameterNoEscape('updateSet', getCustomerUpdatesupdateSet);
+			
+			var getCustomerUpdatesresponse = getCustomerUpdatesr.execute();
+			var getCustomerUpdatesresponseBody = getCustomerUpdatesresponse.getBody();
+			var getCustomerUpdateshttpStatus = getCustomerUpdatesresponse.getStatusCode();
+			var getCustomerUpdatesparsedCust = JSON.parse(getCustomerUpdatesresponseBody);
+		}
+		catch(getCustomerUpdatesex) {
+			var getCustomerUpdatesmessage = getCustomerUpdatesex.getMessage();
+		}
+		
+		// Next we need to transform the Customer Updates to transform products
+		
+		//Create a new import set
+		var getCustomerUpdatescrImpSet = new GlideRecord('sys_import_set');
+		getCustomerUpdatescrImpSet.initialize();
+		getCustomerUpdatescrImpSet.mode = 'synchronous';
+		getCustomerUpdatescrImpSet.table_name = 'x_pagr_paphos_tran_transform_customer_up'; //Set the extended importset table
+		getCustomerUpdatescrImpSet.state = 'loading';
+		getCustomerUpdatescrImpSet.insert();
+		var getCustomerUpdatesrestGR = new GlideRecord('x_pagr_paphos_tran_transform_customer_up'); //Query extended import set rows table
+		//Loop through the json chunks until 0 remain creating import set rows to be transformed
+		
+		
+		var getCustomerUpdatesparsedCust = getCustomerUpdatesparsedCust;
+		
+		for(var getCustomerUpdatesobj in getCustomerUpdatesparsedCust){
+			if(getCustomerUpdatesparsedCust.hasOwnProperty(getCustomerUpdatesobj)){
+				for(var getCustomerUpdatesprop in getCustomerUpdatesparsedCust[getCustomerUpdatesobj]){
+					if(getCustomerUpdatesparsedCust[getCustomerUpdatesobj].hasOwnProperty(getCustomerUpdatesprop)){
+						
+						getCustomerUpdatesrestGR.initialize();
+						getCustomerUpdatesrestGR.u_sys = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].sys_id;
+						getCustomerUpdatesrestGR.action = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].action;
+						getCustomerUpdatesrestGR.application = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].application.value;
+						getCustomerUpdatesrestGR.category = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].category;
+						getCustomerUpdatesrestGR.comments = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].comments;
+						getCustomerUpdatesrestGR.name = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].name;
+						getCustomerUpdatesrestGR.payload = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].payload;
+						getCustomerUpdatesrestGR.payload_hash = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].payload_hash;
+						getCustomerUpdatesrestGR.remote_update_set = getCustomerUpdatesupdateSet;
+						getCustomerUpdatesrestGR.table = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].table;
+						getCustomerUpdatesrestGR.target_name = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].target_name;
+						getCustomerUpdatesrestGR.type = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].type;
+						getCustomerUpdatesrestGR.update_domain = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].update_domain.value;
+						getCustomerUpdatesrestGR.update_guid = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].update_guid;
+						getCustomerUpdatesrestGR.update_guid_history = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].update_guid_history;
+						getCustomerUpdatesrestGR.view = getCustomerUpdatesparsedCust[getCustomerUpdatesobj][getCustomerUpdatesprop].view;
+						getCustomerUpdatesrestGR.sys_import_set = getCustomerUpdatescrImpSet.sys_id; //This is the sys_id from import set above
+						getCustomerUpdatesrestGR.insert();
+					}
+					
+				}
+			}
+		}
+		//gs.info('_getCustomerUpdates voor return');
+		
+		return;
+	},
+	
+	
+	type: 'transformUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 14:47:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0d9f578037841700ca23021a54990e87</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>transformUtils</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_script_include_0d9f578037841700ca23021a54990e87</sys_update_name>
+        <sys_updated_by>peter.bodelier</sys_updated_by>
+        <sys_updated_on>2018-03-22 21:22:44</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update node_type="sys_grid_canvas" unload_date="2018-08-23 13:34:37">
+    <sys_grid_canvas action="INSERT_OR_UPDATE">
+        <legacy_page display_value="PA RDACL">7139f03437085700ca23021a54990e69</legacy_page>
+        <name>PA New Tab 3</name>
+        <sys_class_name>sys_grid_canvas</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-31 10:30:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f539f03437085700ca23021a54990e69</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PA New Tab 3</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_grid_canvas_f539f03437085700ca23021a54990e69</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-31 10:30:26</sys_updated_on>
+        <related_items_node>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab 3">f539f03437085700ca23021a54990e69</grid_canvas>
+                <height>10</height>
+                <portal_widget display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_widget>
+                <posx>6</posx>
+                <posy>0</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>jessica.snieder</sys_created_by>
+                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                <sys_customer_update>false</sys_customer_update>
+                <sys_id>4059703437085700ca23021a54990e93</sys_id>
+                <sys_mod_count>5</sys_mod_count>
+                <sys_name>f539f03437085700ca23021a54990e69</sys_name>
+                <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+                <sys_policy/>
+                <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+                <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_4059703437085700ca23021a54990e93</sys_update_name>
+                <sys_updated_by>jessica.snieder</sys_updated_by>
+                <sys_updated_on>2018-01-31 10:31:10</sys_updated_on>
+                <width>6</width>
+                <related_items_node>
+                    <sys_portal action="INSERT_OR_UPDATE">
+                        <dropzone/>
+                        <offset/>
+                        <page display_value="PA RDACL">7139f03437085700ca23021a54990e69</page>
+                        <summary>Scrum - Closed Assumptions, Decisions, Conditions and Lessons Learned</summary>
+                        <sys_created_by>jessica.snieder</sys_created_by>
+                        <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                        <sys_id>0459703437085700ca23021a54990e91</sys_id>
+                        <sys_mod_count>1</sys_mod_count>
+                        <sys_updated_by>jessica.snieder</sys_updated_by>
+                        <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                        <related_items_node>
+                            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                                <grid_canvas display_value="PA New Tab 3">f539f03437085700ca23021a54990e69</grid_canvas>
+                                <height>10</height>
+                                <portal_widget display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_widget>
+                                <posx>6</posx>
+                                <posy>0</posy>
+                                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_customer_update>false</sys_customer_update>
+                                <sys_id>4059703437085700ca23021a54990e93</sys_id>
+                                <sys_mod_count>5</sys_mod_count>
+                                <sys_name>f539f03437085700ca23021a54990e69</sys_name>
+                                <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+                                <sys_policy/>
+                                <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+                                <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+                                <sys_update_name>sys_grid_canvas_pane_4059703437085700ca23021a54990e93</sys_update_name>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:31:10</sys_updated_on>
+                                <width>6</width>
+                            </sys_grid_canvas_pane>
+                        </related_items_node>
+                        <related_items_node>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>help_text_window</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>0059703437085700ca23021a54990e92</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>report_widget_description</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>sys_id</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>0859703437085700ca23021a54990e91</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>b2ffbce037405700ca23021a54990ea5</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>title</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>4859703437085700ca23021a54990e92</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>Scrum - Closed Assumptions, Decisions, Conditions and Lessons Learned</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>renderer</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>4c59703437085700ca23021a54990e91</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>com.glide.ui.portal.RenderReport</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>report_type</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>8459703437085700ca23021a54990e92</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>bar</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>can_subscribe</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+                                <sys_id>c059703437085700ca23021a54990e92</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:50</sys_updated_on>
+                                <value>true</value>
+                            </sys_portal_preferences>
+                        </related_items_node>
+                    </sys_portal>
+                </related_items_node>
+                <related_items_node>
+                    <sys_portal action="INSERT_OR_UPDATE">
+                        <dropzone/>
+                        <offset/>
+                        <page display_value="PA RDACL">7139f03437085700ca23021a54990e69</page>
+                        <summary>Scrum - Open Risks, Decisions and Conditions</summary>
+                        <sys_created_by>jessica.snieder</sys_created_by>
+                        <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                        <sys_id>a649b03437085700ca23021a54990ec0</sys_id>
+                        <sys_mod_count>1</sys_mod_count>
+                        <sys_updated_by>jessica.snieder</sys_updated_by>
+                        <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                        <related_items_node>
+                            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                                <grid_canvas display_value="PA New Tab 3">f539f03437085700ca23021a54990e69</grid_canvas>
+                                <height>10</height>
+                                <portal_widget display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_widget>
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_customer_update>false</sys_customer_update>
+                                <sys_id>f249b03437085700ca23021a54990ec2</sys_id>
+                                <sys_mod_count>6</sys_mod_count>
+                                <sys_name>f539f03437085700ca23021a54990e69</sys_name>
+                                <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+                                <sys_policy/>
+                                <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+                                <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+                                <sys_update_name>sys_grid_canvas_pane_f249b03437085700ca23021a54990ec2</sys_update_name>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:31:10</sys_updated_on>
+                                <width>6</width>
+                            </sys_grid_canvas_pane>
+                        </related_items_node>
+                        <related_items_node>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>report_type</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>2a49b03437085700ca23021a54990ec1</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>bar</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>can_subscribe</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>6649b03437085700ca23021a54990ec1</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>true</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>help_text_window</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>a249b03437085700ca23021a54990ec1</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>report_widget_description</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>sys_id</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>aa49b03437085700ca23021a54990ec0</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>79effce037405700ca23021a54990e18</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>title</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>ea49b03437085700ca23021a54990ec1</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>Scrum - Open Risks, Decisions and Conditions</value>
+                            </sys_portal_preferences>
+                            <sys_portal_preferences action="INSERT_OR_UPDATE">
+                                <name>renderer</name>
+                                <portal_section display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_section>
+                                <sys_created_by>jessica.snieder</sys_created_by>
+                                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                                <sys_id>ee49b03437085700ca23021a54990ec0</sys_id>
+                                <sys_mod_count>0</sys_mod_count>
+                                <sys_updated_by>jessica.snieder</sys_updated_by>
+                                <sys_updated_on>2018-01-31 10:30:45</sys_updated_on>
+                                <value>com.glide.ui.portal.RenderReport</value>
+                            </sys_portal_preferences>
+                        </related_items_node>
+                    </sys_portal>
+                </related_items_node>
+            </sys_grid_canvas_pane>
+            <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+                <grid_canvas display_value="PA New Tab 3">f539f03437085700ca23021a54990e69</grid_canvas>
+                <height>10</height>
+                <portal_widget display_value="Created 31-01-2018 11:30:45">a649b03437085700ca23021a54990ec0</portal_widget>
+                <posx>0</posx>
+                <posy>0</posy>
+                <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+                <sys_created_by>jessica.snieder</sys_created_by>
+                <sys_created_on>2018-01-31 10:30:45</sys_created_on>
+                <sys_customer_update>false</sys_customer_update>
+                <sys_id>f249b03437085700ca23021a54990ec2</sys_id>
+                <sys_mod_count>6</sys_mod_count>
+                <sys_name>f539f03437085700ca23021a54990e69</sys_name>
+                <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+                <sys_policy/>
+                <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+                <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+                <sys_update_name>sys_grid_canvas_pane_f249b03437085700ca23021a54990ec2</sys_update_name>
+                <sys_updated_by>jessica.snieder</sys_updated_by>
+                <sys_updated_on>2018-01-31 10:31:10</sys_updated_on>
+                <width>6</width>
+            </sys_grid_canvas_pane>
+        </related_items_node>
+    </sys_grid_canvas>
+</record_update>

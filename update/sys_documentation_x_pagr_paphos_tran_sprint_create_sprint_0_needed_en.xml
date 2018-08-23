@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="sprint_0_needed" label="Sprint 0 needed" language="en" table="x_pagr_paphos_tran_sprint_create">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>sprint_0_needed</element>
+            <help/>
+            <hint/>
+            <label>Sprint 0 needed</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_sprint_create</name>
+            <plural>Sprint 0 needed</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 09:51:38</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>593da0aa377f4300a6e5c2f954990e23</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Sprint 0 needed</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_documentation_x_pagr_paphos_tran_sprint_create_sprint_0_needed_en</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 09:51:38</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" audit="true" extends="x_pagr_paphos_tran_paphos_transform_table" label="Epic" max_length="40" name="x_pagr_paphos_tran_epic" type="collection">
+        <element label="Create standard stories" max_length="40" name="create_standard_stories" type="boolean"/>
+        <element label="Epic Owner" max_length="32" name="epic_owner" reference="x_pagr_paphos_tran_team_members" reference_floats="true" reference_qual="team_role=3^EQ" reference_qual_condition="team_role=3^EQ" type="reference"/>
+        <element label="Product" max_length="32" name="product" reference="x_pagr_paphos_tran_product" reference_floats="true" type="reference"/>
+        <element label="Release" max_length="32" name="release" reference="x_pagr_paphos_tran_release" reference_floats="true" type="reference"/>
+        <element label="Theme" max_length="32" name="theme" reference="x_pagr_paphos_tran_theme" reference_floats="true" type="reference"/>
+        <index name="index">
+            <element name="product"/>
+        </index>
+        <index name="index2">
+            <element name="release"/>
+        </index>
+        <index name="index3">
+            <element name="epic_owner"/>
+        </index>
+        <index name="index4">
+            <element name="theme"/>
+        </index>
+    </element>
+</database>

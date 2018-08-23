@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Retrieve Impulse4 Releases">c619e2c037041700ca23021a54990e19</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-03-27 10:48:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>13bc0066dbc5d300aa4fb34ffe961917</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieve Impulse4 Releases.Transform Scrum Master</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_13bc0066dbc5d300aa4fb34ffe961917</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-27 10:48:15</sys_updated_on>
+        <user_criteria display_value="Transform Scrum Master">2c87435d370c9700ca23021a54990ead</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+</record_update>

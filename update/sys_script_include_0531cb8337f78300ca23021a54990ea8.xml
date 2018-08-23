@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_pagr_paphos_tran.transformStandardStories</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>transformStandardStories</name>
+        <script><![CDATA[var transformStandardStories = Class.create();
+transformStandardStories.prototype = {
+	initialize: function() {
+	},
+	createStories:function(epic_short_description,epic_sys_id,epic_product,epic_release){
+	
+		var ws = new GlideRecord("x_pagr_paphos_tran_story");
+		ws.short_description = "Plan Workshop " + epic_short_description;
+		ws.description = "To determine the requirements for the " + epic_short_description + " process a workshop needs to be planned with stakeholders of the specific process within the company and the entire Scrum team.";
+		ws.priority = 4;
+		ws.state = 1;
+		ws.type = 2;
+		ws.epic = epic_sys_id;
+		ws.product = epic_product;
+		ws.release = epic_release;
+		ws.insert();
+		
+		var form = new GlideRecord("x_pagr_paphos_tran_story");
+		form.short_description = "Customize " + epic_short_description + " Form";
+		form.description = "As " + epic_short_description + " Manager I want the following fields on the form: " + '\n\n' + "- LEFT SIDE: " + '\n' + "- RIGHT SIDE: " + '\n' + "- FULL WIDTH: " + '\n' + "- TABS: " + '\n'+ "- RELATED LISTS: ";
+		form.priority = 4;
+		form.state = 1;
+		form.type = 4;
+		form.epic = epic_sys_id;
+		form.product = epic_product;
+		form.release = epic_release;
+		form.insert();
+
+		var rpt = new GlideRecord("x_pagr_paphos_tran_story");
+		rpt.short_description = "Create reports and dashboards for " + epic_short_description;
+		rpt.description = "As " + epic_short_description + " Manager I would like to have the following reports: " + '\n\n' + "Also I would like to have a homepage/dashboard, named: " + epic_short_description + " with the following reports: ";
+		rpt.priority = 4;
+		rpt.state = 1;
+		rpt.type = 4;
+		rpt.epic = epic_sys_id;
+		rpt.product = epic_product;
+		rpt.release = epic_release;
+		rpt.insert();
+
+		var but = new GlideRecord("x_pagr_paphos_tran_story");
+		but.short_description = "Configuration of the buttons on the " + epic_short_description + " forms";
+		but.description = "As " + epic_short_description + " Manager I want the following buttons on the " + epic_short_description + " form: ";
+		but.priority = 4;
+		but.state = 1;
+		but.type = 4;
+		but.epic = epic_sys_id;
+		but.product = epic_product;
+		but.release = epic_release;
+		but.insert();
+
+		var mail = new GlideRecord("x_pagr_paphos_tran_story");
+		mail.short_description = "Email notifications " + epic_short_description;
+		mail.description = "As " + epic_short_description + " Manager I would like the following email notifications for my process. (See attachment)";
+		mail.priority = 4;
+		mail.state = 1;
+		mail.type = 4;
+		mail.epic = epic_sys_id;
+		mail.product = epic_product;
+		mail.release = epic_release;
+		mail.insert();
+
+		var act = new GlideRecord("x_pagr_paphos_tran_story");
+		act.short_description = epic_short_description + " form read only when active = false";
+		act.description = "As user of the " + epic_short_description + " module I would like to see that the tickets become read only when active = false (e.g. ticket is closed), so we are not able to change the content of the ticket when it is closed.";
+		act.priority = 4;
+		act.state = 1;
+		act.type = 4;
+		act.epic = epic_sys_id;
+		act.product = epic_product;
+		act.release = epic_release;
+		act.insert();
+
+		var uat = new GlideRecord("x_pagr_paphos_tran_story");
+		uat.short_description = "User Acceptance Test " + epic_short_description;
+		uat.description = "As Scrum Master I would like to schedule a User Acceptance Test";
+		uat.priority = 4;
+		uat.state = 1;
+		uat.type = 2;
+		uat.epic = epic_sys_id;
+		uat.product = epic_product;
+		uat.release = epic_release;
+		uat.insert();
+
+		var qrc = new GlideRecord("x_pagr_paphos_tran_story");
+		qrc.short_description = "Create Quick Reference Cards for " + epic_short_description;
+		qrc.description = "As " + epic_short_description + " Manager I would like to inform the users with QRC's so that they are aware of the possibilities in ServiceNow for my process." + '\n' + "I also want that the QRC's are available in the Knowledge Base.";
+		qrc.priority = 4;
+		qrc.state = 1;
+		qrc.type = 2;
+		qrc.epic = epic_sys_id;
+		qrc.product = epic_product;
+		qrc.release = epic_release;
+		qrc.insert();
+	},
+	type: 'transformStandardStories'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 10:00:01</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0531cb8337f78300ca23021a54990ea8</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>transformStandardStories</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_script_include_0531cb8337f78300ca23021a54990ea8</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-06 13:14:23</sys_updated_on>
+    </sys_script_include>
+</record_update>

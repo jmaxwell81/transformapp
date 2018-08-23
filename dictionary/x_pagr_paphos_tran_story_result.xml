@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" extends="x_pagr_paphos_tran_paphos_transform_table" label="Story result" max_length="40" name="x_pagr_paphos_tran_story_result" type="collection">
+        <element label="Blocked" max_length="40" name="blocked" type="boolean"/>
+        <element label="Blocked reason" max_length="4000" name="blocked_reason" type="string"/>
+        <element label="End result" max_length="40" name="end_result" type="integer"/>
+        <element label="Number of votes" max_length="40" name="number_of_votes" type="integer"/>
+        <element label="Result number" max_length="40" name="result_number" type="string"/>
+        <element label="Room" max_length="32" name="room" reference="x_pagr_paphos_tran_poker_room" type="reference"/>
+        <element label="Story" max_length="32" name="story" reference="x_pagr_paphos_tran_story" type="reference"/>
+        <index name="index">
+            <element name="room"/>
+        </index>
+        <index name="index2">
+            <element name="story"/>
+        </index>
+    </element>
+</database>

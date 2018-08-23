@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="follow_up" label="Follow up" language="en" table="x_pagr_paphos_tran_meeting_task">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>follow_up</element>
+            <help/>
+            <hint/>
+            <label>Follow up</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_meeting_task</name>
+            <plural>Follow ups</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 11:56:54</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>50e90d6237b34300ca23021a54990e90</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Follow up</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_documentation_x_pagr_paphos_tran_meeting_task_follow_up_en</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 11:56:54</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

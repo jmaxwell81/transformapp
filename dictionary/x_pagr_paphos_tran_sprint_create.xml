@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" label="Sprint create" max_length="40" name="x_pagr_paphos_tran_sprint_create" type="collection">
+        <element default="14" label="Days per sprint" max_length="40" name="days_per_sprint" type="integer"/>
+        <element label="Go Live support needed" max_length="40" name="go_live_support_needed" type="boolean"/>
+        <element default="3" label="Number of sprints" max_length="40" name="number_of_sprints" type="integer"/>
+        <element label="Release" max_length="32" name="release" reference="x_pagr_paphos_tran_release" type="reference"/>
+        <element label="Sprint 0 needed" max_length="40" name="sprint_0_needed" type="boolean"/>
+        <element default="javascript:current.release.planned_start" label="Start date" max_length="40" name="start_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="release"/>
+        </index>
+    </element>
+</database>

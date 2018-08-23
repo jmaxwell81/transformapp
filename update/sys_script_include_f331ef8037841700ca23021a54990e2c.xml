@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_pagr_paphos_tran.transformUtilsAjax</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>transformUtilsAjax</name>
+        <script><![CDATA[var transformUtilsAjax = Class.create();
+transformUtilsAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	orderRelease: function() {
+		//gs.info("Triggered Ajax");
+		
+		var product = this.getParameter('sysparm_prd');
+		var release = this.getParameter('sysparm_rel');
+		
+		var prd = new transformUtils();
+		prd.getProducts(product);
+		//gs.info("Triggered getProducts");
+		var epc = new transformUtils();
+		epc.getEpics(product);
+		//gs.info("Triggered getEpics");
+		var rel = new transformUtils();
+		rel.getReleases(release, product);
+		//gs.info("Triggered getReleases");
+		var str = new transformUtils();
+		//gs.info("Triggered attempt getStories");
+		str.getStories(release, product);
+		//gs.info("Triggered getStories");
+		
+		
+		var result = this.newItem("result");
+		result.setAttribute("success",true);
+		//gs.info("Sent result");
+		},
+	
+	
+	getProducts: function() { // build new response xml element for result
+		try {
+			var r = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Product Import', 'GET All');
+			r.setStringParameterNoEscape('product', '');
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			var parsed = JSON.parse(responseBody);
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+		}
+		var parsed = parsed;
+		for(var obj in parsed){
+			if(parsed.hasOwnProperty(obj)){
+				for(var prop in parsed[obj]){
+					if(parsed[obj].hasOwnProperty(prop)){
+						var label = parsed[obj][prop].display_name;
+						var sys_id = parsed[obj][prop].sys_id;
+						this._addproduct(label,sys_id);
+						//gs.info("Label: " + label);
+					}
+				}
+			}
+		}
+	},
+	
+	getReleases: function() { // build new response xml element for result
+		var product = this.getParameter('sysparm_product');
+		try {
+			var r = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Product Release Import', 'Default GET');
+			r.setStringParameterNoEscape('product', product);
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			var parsed = JSON.parse(responseBody);
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+		}
+		var parsed = parsed;
+		for(var obj in parsed){
+			if(parsed.hasOwnProperty(obj)){
+				for(var prop in parsed[obj]){
+					if(parsed[obj].hasOwnProperty(prop)){
+						var releaseSys = parsed[obj][prop].release.value;
+						
+						
+						try {
+							var r2 = new sn_ws.RESTMessageV2('x_pagr_paphos_tran.Transform Release Import', 'Default GET');
+							r2.setStringParameterNoEscape('release', releaseSys);
+							
+							var response2 = r2.execute();
+							var responseBody2 = response2.getBody();
+							var httpStatus2 = response2.getStatusCode();
+							var parsed2 = JSON.parse(responseBody2);
+						}
+						catch(ex) {
+							var message2 = ex.getMessage();
+						}
+						var parsed2 = parsed2;
+						for(var obj2 in parsed2){
+							if(parsed2.hasOwnProperty(obj2)){
+								for(var prop2 in parsed2[obj2]){
+									if(parsed2[obj2].hasOwnProperty(prop2)){
+										var label2 = parsed2[obj2][prop2].short_description;
+										var sys_id2 = parsed2[obj2][prop2].sys_id;
+										this._addrelease(label2,sys_id2);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	
+	
+	_addrelease: function(label2, sys_id2) {
+		var rel = this.newItem("release");
+		rel.setAttribute("name",label2);
+		rel.setAttribute("value",sys_id2); },
+		
+		_addproduct: function(label, sys_id) {
+			var prod = this.newItem("product");
+			prod.setAttribute("name",label);
+			prod.setAttribute("value",sys_id); },
+			
+			type: 'transformUtilsAjax'
+		});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 14:50:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f331ef8037841700ca23021a54990e2c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>transformUtilsAjax</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_script_include_f331ef8037841700ca23021a54990e2c</sys_update_name>
+        <sys_updated_by>peter.bodelier</sys_updated_by>
+        <sys_updated_on>2018-03-07 17:06:26</sys_updated_on>
+    </sys_script_include>
+</record_update>

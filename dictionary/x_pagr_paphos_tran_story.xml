@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true,live_feed=true" audit="true" extends="task" label="Story" max_length="40" name="x_pagr_paphos_tran_story" sizeclass="260" type="collection">
+        <element default="&lt;Enter acceptance criteria, which requirements should be addressed by this functionality in order to accept it?&gt;" label="Acceptance Criteria" max_length="4000" name="acceptancecriteria" type="string"/>
+        <element label="Blocked" max_length="40" name="blocked" type="boolean"/>
+        <element label="Blocked reason" max_length="1000" name="blocked_reason" type="string"/>
+        <element choice="1" default="1" label="Classification" max_length="40" name="classification" type="string">
+            <choice>
+                <element label="Feature" sequence="1" value="1"/>
+                <element label="Defect" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element label="Dependency explanation" max_length="4000" name="dependency_explanation" type="string"/>
+        <element label="Developed how" max_length="4000" name="developed_how" type="string"/>
+        <element label="Developed where" max_length="4000" name="developed_where" type="string"/>
+        <element label="Epic" max_length="32" name="epic" reference="x_pagr_paphos_tran_epic" reference_floats="true" type="reference"/>
+        <element label="Impulse4 summary" max_length="4000" name="impulse4_summary" type="string"/>
+        <element attributes="readonly_clickthrough=true" label="Leading story" max_length="32" name="leading_story" reference="x_pagr_paphos_tran_story" reference_floats="true" type="reference"/>
+        <element label="Planned end" max_length="40" name="planned_end" type="glide_date_time"/>
+        <element label="Planned start" max_length="40" name="planned_start" type="glide_date_time"/>
+        <element label="Points" max_length="40" name="points" type="integer"/>
+        <element label="Product" max_length="32" name="product" reference="x_pagr_paphos_tran_product" reference_floats="true" type="reference"/>
+        <element label="Release" max_length="32" name="release" reference="x_pagr_paphos_tran_release" reference_floats="true" type="reference"/>
+        <element label="Team member" max_length="32" name="release_members" reference="x_pagr_paphos_tran_team_members" type="reference"/>
+        <element label="Team" max_length="32" name="release_team" reference="x_pagr_paphos_tran_team" type="reference"/>
+        <element label="Sprint" max_length="32" name="sprint" reference="x_pagr_paphos_tran_sprint" reference_floats="true" type="reference"/>
+        <element choice="1" label="Standard/Optional" max_length="40" name="standard_optional" type="string">
+            <choice>
+                <element label="Standard" sequence="0" value="standard"/>
+                <element label="Optional" sequence="1" value="optional"/>
+            </choice>
+        </element>
+        <element label="Dependency with other story" max_length="40" name="story_dependency" type="boolean"/>
+        <element label="Story reference" max_length="32" name="story_reference" reference="x_pagr_paphos_tran_story" type="reference"/>
+        <element label="Theme" max_length="32" name="theme" reference="x_pagr_paphos_tran_theme" reference_floats="true" type="reference"/>
+        <element choice="1" default="4" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element label="Development" sequence="1" value="4"/>
+                <element label="Spike" sequence="2" value="2"/>
+                <element label="Documentation" sequence="3" value="3"/>
+            </choice>
+        </element>
+        <element label="Update set sequence" max_length="40" name="update_set_sequence" type="integer"/>
+    </element>
+</database>

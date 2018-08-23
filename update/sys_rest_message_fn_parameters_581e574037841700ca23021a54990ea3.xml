@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>parent</name>
+        <rest_message_function display_value="Default GET Parent">d40ed34037841700ca23021a54990e75</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 14:35:23</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>581e574037841700ca23021a54990ea3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>parent</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_581e574037841700ca23021a54990ea3</sys_update_name>
+        <sys_updated_by>peter.bodelier</sys_updated_by>
+        <sys_updated_on>2018-03-07 15:47:09</sys_updated_on>
+        <type>string</type>
+        <value>4b418bcddb32470046dc742eaf961959</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

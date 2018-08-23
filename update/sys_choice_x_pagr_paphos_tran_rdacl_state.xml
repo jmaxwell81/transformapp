@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_pagr_paphos_tran_rdacl" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>condition</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fulfilled</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>3</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:01:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d9a859aa37b34300ca23021a54990ed1</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-03-06 12:16:03</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>condition</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Not fulfilled</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>4</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:01:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5cb81daa37b34300ca23021a54990e79</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:01:37</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>decision</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>To be approved</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>5</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>86c899aa37b34300ca23021a54990ea9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:02:01</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>decision</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Approved</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>6</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d4d85daa37b34300ca23021a54990e8c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:02:09</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>decision</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Denied</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>7</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5ed85daa37b34300ca23021a54990ee1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:02:18</sys_updated_on>
+            <value>7</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>risk</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Green</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>8</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>48f89daa37b34300ca23021a54990e2e</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 16:03:17</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>risk</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Amber</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>9</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5af89daa37b34300ca23021a54990e83</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 16:03:16</sys_updated_on>
+            <value>9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>risk</dependent_value>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Red</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>10</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:02:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>18095daa37b34300ca23021a54990eec</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 16:03:16</sys_updated_on>
+            <value>10</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:01:24</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>3c59cce2dbc5d300aa4fb34ffe96198d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_choice_x_pagr_paphos_tran_rdacl_state</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:01:24</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

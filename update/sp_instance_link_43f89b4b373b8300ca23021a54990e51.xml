@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance_link">
+    <sp_instance_link action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <glyph>plus</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>0</order>
+        <roles/>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description>Create a new Epic</short_description>
+        <size>md</size>
+        <sp_column display_value="3">f7e85b4b373b8300ca23021a54990e76</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 11:39:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>43f89b4b373b8300ca23021a54990e51</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Epic</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sp_instance_link_43f89b4b373b8300ca23021a54990e51</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-02-01 07:52:01</sys_updated_on>
+        <title>Epic</title>
+        <type>url</type>
+        <url>?id=transform_sc_cat_item&amp;sys_id=1dbf881737bb8300ca23021a54990e8e</url>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Color Box",
+		"displayValue": "Color Box"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+</record_update>

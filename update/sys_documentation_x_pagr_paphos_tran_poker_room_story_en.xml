@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="story" label="Story" language="en" table="x_pagr_paphos_tran_poker_room">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>story</element>
+            <help/>
+            <hint/>
+            <label>Story</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_poker_room</name>
+            <plural>Stories</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 10:50:09</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>669af82637bf4300a6e5c2f954990e98</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Story</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_documentation_x_pagr_paphos_tran_poker_room_story_en</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 10:50:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

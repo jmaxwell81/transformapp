@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="responsible_role" table="x_pagr_paphos_tran_rdacl" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>responsible_role</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Product Owner</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>0</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 12:13:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>be4d852637b34300ca23021a54990e3d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 12:13:09</sys_updated_on>
+            <value>0</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>responsible_role</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Project Manager</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>1</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 12:14:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b2fd852637b34300ca23021a54990e1c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 12:14:49</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>responsible_role</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Scrum Master</label>
+            <language>en</language>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sequence>2</sequence>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 12:15:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>132e852637b34300ca23021a54990e45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 12:15:41</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>responsible_role</element>
+            <name>x_pagr_paphos_tran_rdacl</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 12:13:09</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>f059cce2dbc5d300aa4fb34ffe961989</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>responsible_role</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_choice_x_pagr_paphos_tran_rdacl_responsible_role</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 12:13:09</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

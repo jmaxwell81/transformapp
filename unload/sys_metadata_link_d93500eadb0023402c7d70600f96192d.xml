@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>917f01b2db811700aa4fb34ffe961900</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_pagr_paphos_tran_epic">
+    <x_pagr_paphos_tran_epic action="INSERT_OR_UPDATE">
+        <create_standard_stories>false</create_standard_stories>
+        <description/>
+        <epic_owner display_value="Mark Manders">880c41bedb411700aa4fb34ffe961966</epic_owner>
+        <number>EPIC0001007</number>
+        <planned_end>2018-04-18 16:00:00</planned_end>
+        <planned_start>2018-03-28 06:00:00</planned_start>
+        <product display_value="ServiceNow">400c41bedb411700aa4fb34ffe961968</product>
+        <release display_value="Paphos Group Release II">cc0c893adb411700aa4fb34ffe961938</release>
+        <short_description>CSM Service Portal</short_description>
+        <state>3</state>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-03-28 10:18:30</sys_created_on>
+        <sys_id>917f01b2db811700aa4fb34ffe961900</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-28 10:19:02</sys_updated_on>
+        <theme display_value="Customer Service Mgt">183e8572db811700aa4fb34ffe96197a</theme>
+        <work_notes/>
+    </x_pagr_paphos_tran_epic>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-08-23 13:23:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d93500eadb0023402c7d70600f96192d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CSM Service Portal</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_metadata_link_d93500eadb0023402c7d70600f96192d</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-08-23 13:23:42</sys_updated_on>
+        <tablename>x_pagr_paphos_tran_epic</tablename>
+    </sys_metadata_link>
+</record_update>

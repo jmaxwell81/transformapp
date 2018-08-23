@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[showHideLoadWhenField();
+
+function showHideLoadWhenField() { 
+	var loadFieldLabelParent = angular.element(document.getElementById("status.add_metadata_link.load_when").parentElement.parentElement);
+	var loadFieldChoiceParent = angular.element(document.getElementById("dir_choicelist").parentElement);
+
+	if ('$[gs.isCurrentApplicationCustom()]' == 'false') {
+		loadFieldLabelParent.hide();
+		loadFieldChoiceParent.hide();
+	}
+	else {
+		loadFieldLabelParent.show();
+		loadFieldChoiceParent.show();
+	}
+}
+
+//function currently not used. tried to publish complete app
+function onSubmitApp() {
+	var getScope = new GlideRecord('sys_app');
+	if(!getScope.get('name','Paphos Transform')){
+		gs.addInfoMessage('Paphos Transform Scope not found');
+	}
+	
+	this.appId = getScope.sys_id;
+	this.nameField = getScope.name;
+	this.descriptionField = getScope.short_description;
+	this.versionField = getScope.version;
+	this.includeDataField = 'true';
+	this.inferredUsName = "";
+	if (this.versionField.value.length > 0) {
+		this.inferredUsName = this.nameField.value + " - " + this.versionField.value;
+	} else {
+		this.inferredUsName = this.nameField.value;
+	}
+	
+
+	var ga = new GlideAjax('com.snc.apps.AppsAjaxProcessor');
+	ga.addParam('sysparm_function', 'createUpdateSet');
+	ga.addParam('sysparm_name', nameField.value);
+	ga.addParam('sysparm_appid', this.appId);
+	ga.addParam('sysparm_description', this.descriptionField.value);
+	ga.addParam('sysparm_current', 'false');
+	ga.getXML(function (response) {
+		var setId = response.responseXML.documentElement.getAttribute("answer");
+		publishApp(setId);
+		return false;
+	});
+}
+
+function publishApp(updateSetId) {
+	var dd = new GlideModal("hierarchical_progress_viewer");
+	dd.on("beforeclose", function () {
+               var notification = {"getAttribute": function(name) {return 'true';}};
+               CustomEvent.fireTop(GlideUI.UI_NOTIFICATION + '.update_set_change', notification);
+               window.location.href = "sys_update_set.do?sys_id=" + updateSetId;
+	});
+	
+	dd.setTitle("Progress");
+	dd.setPreference('sysparm_function', 'publishToUpdateSet');
+	dd.setPreference('sysparm_update_set_id', updateSetId);
+	dd.setPreference('sysparm_sys_id', this.appId);
+	dd.setPreference('sysparm_name', this.inferredUsName);
+	dd.setPreference('sysparm_version', this.versionField.value);
+	dd.setPreference('sysparm_description', this.descriptionField.value);
+	dd.setPreference('sysparm_include_data', this.includeDataField.checked);
+	dd.setPreference('sysparm_progress_name', "Publishing application");
+	dd.setPreference('sysparm_ajax_processor', 'com.snc.apps.AppsAjaxProcessor');
+	dd.setPreference('sysparm_show_done_button', 'true');
+	
+	dd.render();
+	GlideDialogWindow.get().destroy();
+	
+	return dd;
+}
+					]]></client_script>
+        <description>Create application files for each selected record or a queried set of records</description>
+        <direct>false</direct>
+        <endpoint>x_pagr_paphos_tran_export_transform_app_and_data.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+<g:ui_form>
+	
+	<style type="text/css">
+		#add_metadata_link_dialog_container input {
+			width: 375px;
+		}
+		#info_message {
+			margin-left:10px;
+			color:#667;
+		 }
+	</style>
+
+	<div id="add_metadata_link_dialog_container">
+		  <span class="row">${gs.getMessage('Please indicate how these records should be loaded during installation')}</span>
+      <!-- span class="label_description" title="" mandatory="true" oclass="">$[SP]</span -->
+      <div class="form-group row">
+         <label for="current_app" class="control-label col-sm-3">${gs.getMessage('Add to application')}:</label>
+         <span class="col-sm-9 form-field">
+             <input id="hardcoded_app" name="hardcoded_app" value="Paphos Transform" class="form-control" type="text" disabled="disabled" />
+         </span>
+      </div>
+
+      <div class="form-group row">
+         <label for="current_table" class="control-label col-sm-3">${gs.getMessage('From table')}:</label>
+         <span class="col-sm-9 form-field">
+             <input id="hard_coded" name="hard_coded" value="Transform" class="form-control" type="text" disabled="disabled" />
+         </span>
+      </div>
+
+
+
+			<div class="row">
+				<div id="dialog_buttons" name="buttons" nowrap="true" style="clear:both; margin-top: 10px; vertical-align:bottom;" colspan="2">
+					<div align="right">
+						<g:dialog_buttons_ok_cancel ok="return true"/>
+					</div>
+				</div>
+			</div>
+	</div>
+</g:ui_form>
+
+</j:jelly>]]></html>
+        <name>export_transform_app_and_data</name>
+        <processing_script><![CDATA[begin();
+function begin() {
+	gs.addInfoMessage('Export transform app completed');
+	var allTransformTables = ['x_pagr_paphos_tran_meeting','x_pagr_paphos_tran_meeting_task','x_pagr_paphos_tran_rdacl'];
+	
+	var i;
+	var current_table;
+	var getAllTransfromTables = new GlideRecord('sys_db_object');
+		getAllTransfromTables.addQuery('sys_scope.name','Paphos Transform');
+		getAllTransfromTables.query();
+
+	while(getAllTransfromTables.next()){
+		current_table = getAllTransfromTables.name;
+		var gr = new GlideRecord(current_table);
+		gr.query();
+		var recCntr = 0;
+		var invRecCntr = 0;
+		while (gr.next()) {
+			if (!this.metadataAlreadyExists(gr,current_table)) {
+				this.addMetadata(gr,current_table);
+				recCntr++;
+			} else {
+				if (this.overwriteMetadata(gr,current_table))
+					invRecCntr++;
+			}
+		}
+		//onSubmitApp();
+		//this.printInfoMessage(recCntr, invRecCntr);
+		//refresh();
+	}
+}
+
+function metadataAlreadyExists(gr,current_table) {
+	var output = new GlideRecord('sys_metadata_link');
+	output.query();
+	
+	// Searches for current record in metadata table, outputs false if it doesn't exist
+	while (output.next()) {
+		// Checking if the record already exists in the metadata link table
+		if (output.documentkey == gr.sys_id && output.sys_scope == '2214a8d637374300a6e5c2f954990e1b' &&
+			output.directory == 'update' && output.tablename == current_table) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function addMetadata(linkedRecord,current_table) {
+	var payloadStr = gs.unloadRecordToXML(linkedRecord, true);
+	var output = new GlideRecord('sys_metadata_link');
+	output.query();
+	output.initialize();
+	output.payload = payloadStr;
+	output.documentkey = linkedRecord.sys_id;
+	output.tablename = current_table;
+	output.sys_name = linkedRecord.getDisplayValue();
+	output.directory = 'update';
+	output.insert();
+}
+
+function overwriteMetadata(linkedRecord,current_table) {
+	var payloadStr = gs.unloadRecordToXML(linkedRecord, true);
+	var output = new GlideRecord('sys_metadata_link');
+	output.addQuery('documentkey', linkedRecord.sys_id);
+	output.addQuery('sys_scope', '2214a8d637374300a6e5c2f954990e1b');
+	output.addQuery('tablename', current_table);
+	output.addQuery('directory', 'update');
+	output.query();
+	
+	if (output.next()) {
+		output.payload = payloadStr;
+		output.sys_name = linkedRecord.getDisplayValue();
+		return output.update();
+	}
+	
+	return null;
+}
+
+function printInfoMessage(insertCount, updateCount) {
+	var msg = '';
+	var href = 'sys_scope.do?sys_id=2214a8d637374300a6e5c2f954990e1b';
+	if (insertCount > 0 && updateCount <= 0) {
+		if (insertCount > 1)
+			msg = gs.getMessage('Created {0} new application files in <a href="{1}">{2}</a>',
+			[String(insertCount), href, gs.getCurrentApplicationName()]);
+			else
+				msg = gs.getMessage('Created one new application file in <a href="{0}">{1}</a>',
+				[href, gs.getCurrentApplicationName()]);
+			}
+			if (updateCount > 0 && insertCount <= 0) {
+				if (updateCount > 1)
+					msg = gs.getMessage('Updated {0} existing application files in <a href="{1}">{2}</a>',
+					[String(updateCount), href, gs.getCurrentApplicationName()]);
+					else
+						msg = gs.getMessage('Updated one existing application file in <a href="{0}">{1}</a>',
+						[href, gs.getCurrentApplicationName()]);
+					}
+					if (insertCount > 0 && updateCount > 0) {
+						msg = gs.getMessage('Created {0} new and updated {1} existing application files in <a href="{2}">{3}</a>',
+							[String(insertCount), String(updateCount), href, gs.getCurrentApplicationName()]);
+						}
+						
+						if (msg !== '') gs.addInfoMessage(msg);
+						}
+					
+		function refresh() {
+			var urlOnStack = GlideSession.get().getStack().bottom();
+			response.sendRedirect(urlOnStack);
+		}
+
+]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 15:26:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>18dc4c9337bb8300ca23021a54990ea8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>export_transform_app_and_data</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_ui_page_18dc4c9337bb8300ca23021a54990ea8</sys_update_name>
+        <sys_updated_by>gertjan.berendsen</sys_updated_by>
+        <sys_updated_on>2018-03-15 13:56:10</sys_updated_on>
+    </sys_ui_page>
+</record_update>

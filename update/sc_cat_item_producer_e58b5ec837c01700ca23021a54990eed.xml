@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item_producer">
+    <sc_cat_item_producer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <availability>on_desktop</availability>
+        <billable>false</billable>
+        <can_cancel>false</can_cancel>
+        <category/>
+        <cost>0</cost>
+        <custom_cart/>
+        <delivery_plan display_value="">523da512c611228900811a37c97c2014</delivery_plan>
+        <delivery_plan_script/>
+        <delivery_time>1970-01-03 00:00:00</delivery_time>
+        <description><![CDATA[<p>With this form you are able to create a new Transform project. After submitting this form, the system automatically creates a Release and relates this to the provided/selected Product. Also, if you have provided a Release team, automatically a team is created in which you can assign the correct users to the correct roles within your project. If you want to use an existing team, you can leave the field empty and manually relate the Team you want to the Release in the back end.</p>
+<p>Based on the information you provided on the number and duration of Sprints, automatically the needed Sprints are created and related to the Release (including a preparation sprint and Go Live sprint if selected)</p>
+<p>After the Release has been created don&#39;t forget to add your project members as team member to the created Team and assign the correct roles to these team members to provide them proper access to the Transform App.</p>]]></description>
+        <entitlement_script/>
+        <group/>
+        <hide_sp>false</hide_sp>
+        <icon/>
+        <ignore_price>true</ignore_price>
+        <image/>
+        <list_price>0</list_price>
+        <location/>
+        <meta/>
+        <mobile_hide_price>false</mobile_hide_price>
+        <mobile_picture/>
+        <mobile_picture_type>use_desktop_picture</mobile_picture_type>
+        <model/>
+        <name>New Transform Release</name>
+        <no_cart>false</no_cart>
+        <no_order>false</no_order>
+        <no_order_now>false</no_order_now>
+        <no_proceed_checkout>false</no_proceed_checkout>
+        <no_quantity>false</no_quantity>
+        <no_search>false</no_search>
+        <omit_price>false</omit_price>
+        <order>0</order>
+        <ordered_item_link/>
+        <picture/>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=e58b5ec837c01700ca23021a54990eed&amp;sysparm_preview=true", "summary");</preview>
+        <price>0</price>
+        <recurring_frequency/>
+        <recurring_price>0</recurring_price>
+        <redirect_url>generated_record</redirect_url>
+        <roles>snc_internal</roles>
+        <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
+        <sc_ic_item_staging/>
+        <sc_ic_version/>
+        <script><![CDATA[var daysPerSprint = producer.u_sprint_length * 7;
+var sprint = new GlideRecord('x_pagr_paphos_tran_sprint_create');
+sprint.initialize();
+sprint.days_per_sprint = daysPerSprint;
+sprint.number_of_sprints = producer.u_number_of_sprints;
+sprint.start_date = producer.planned_start;
+sprint.release = current.getUniqueValue();
+sprint.sprint_0_needed = producer.u_preparation_sprint;
+sprint.go_live_support_needed = producer.u_go_live_support;
+sprint.insert();
+
+var team = new GlideRecord('x_pagr_paphos_tran_team');
+team.initialize();
+team.short_description = producer.new_team;
+team.release = current.getUniqueValue();
+team.insert();
+
+if(producer.new_existing_product != 'existing'){
+	var check = new GlideRecord('x_pagr_paphos_tran_product');
+	check.addQuery('short_description', producer.new_existing_product);
+	check.query();
+	if (!check.hasNext()){
+		var product = new GlideRecord('x_pagr_paphos_tran_product');
+		product.initialize();
+		product.short_description = producer.new_existing_product;
+		product.insert();
+		current.product = product.getUniqueValue();
+	}
+	else {
+		gs.addInfoMessage('The selected product already exists, please relate the product manually in the release that has been created');
+	}
+}]]></script>
+        <short_description>Create new Transform Release</short_description>
+        <show_variable_help_on_load>false</show_variable_help_on_load>
+        <start_closed>false</start_closed>
+        <sys_class_name>sc_cat_item_producer</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 09:46:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e58b5ec837c01700ca23021a54990eed</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>New Transform Release</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sc_cat_item_producer_e58b5ec837c01700ca23021a54990eed</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-04-02 10:11:09</sys_updated_on>
+        <table_name>x_pagr_paphos_tran_release</table_name>
+        <template/>
+        <type>item</type>
+        <use_sc_layout>true</use_sc_layout>
+        <vendor/>
+        <view/>
+        <visible_bundle>true</visible_bundle>
+        <visible_guide>true</visible_guide>
+        <visible_standalone>true</visible_standalone>
+        <workflow/>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=e58b5ec837c01700ca23021a54990eed"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>e58b5ec837c01700ca23021a54990eed</documentkey>
+        <fieldname>description</fieldname>
+        <language>nl</language>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-03-06 14:41:35</sys_created_on>
+        <sys_id>a0c8f47f376cd300ca23021a54990ea3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-06 14:41:35</sys_updated_on>
+        <tablename>sc_cat_item_producer</tablename>
+        <value>&lt;p&gt;With this form you are able to create a new Transform project. After submitting this form, the system automatically creates a Release and relates this to the provided/selected Product. Also, if you have provided a Release team, automatically a team is created in which you can assign the correct users to the correct roles within your project. If you want to use an existing team, you can leave the field empty and manually relate the Team you want to the Release in the back end.&lt;/p&gt;&#13;
+&lt;p&gt;Based on the information you provided on the number and duration of Sprints, automatically the needed Sprints are created and related to the Release (including a preparation sprint and Go Live sprint if selected)&lt;/p&gt;&#13;
+&lt;p&gt;After the Release has been created don't forget to add your project members as team member to the created Team and assign the correct roles to these team members to provide them proper access to the Transform App.&lt;/p&gt;</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>e58b5ec837c01700ca23021a54990eed</documentkey>
+        <fieldname>name</fieldname>
+        <language>nl</language>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-03-06 14:41:35</sys_created_on>
+        <sys_id>e8c8747f376cd300ca23021a54990e92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-06 14:41:35</sys_updated_on>
+        <tablename>sc_cat_item_producer</tablename>
+        <value>New Transform Release</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>e58b5ec837c01700ca23021a54990eed</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>nl</language>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-03-06 14:41:35</sys_created_on>
+        <sys_id>e4c8f47f376cd300ca23021a54990ea0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-06 14:41:35</sys_updated_on>
+        <tablename>sc_cat_item_producer</tablename>
+        <value>Create new Transform Release</value>
+    </sys_translated_text>
+    <fx_price action="delete_multiple" query="id=e58b5ec837c01700ca23021a54990eed"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="EUR">EUR</currency>
+        <field>price</field>
+        <id>e58b5ec837c01700ca23021a54990eed</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 09:46:33</sys_created_on>
+        <sys_id>e3fb920c37c01700ca23021a54990e65</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-29 09:46:33</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="EUR">EUR</currency>
+        <field>recurring_price</field>
+        <id>e58b5ec837c01700ca23021a54990eed</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 09:46:33</sys_created_on>
+        <sys_id>b7fb920c37c01700ca23021a54990e66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-29 09:46:33</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

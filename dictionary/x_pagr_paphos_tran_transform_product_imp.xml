@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="Transform Product Import" max_length="40" name="x_pagr_paphos_tran_transform_product_imp" type="collection">
+        <element attributes="import_attribute_name=description,edge_encryption_enabled=true" label="Description" max_length="40" name="description" type="string"/>
+        <element attributes="import_attribute_name=number,edge_encryption_enabled=true" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="import_attribute_name=planned_end,edge_encryption_enabled=true" label="Planned end" max_length="40" name="planned_end" type="string"/>
+        <element attributes="import_attribute_name=planned_start,edge_encryption_enabled=true" label="Planned start" max_length="40" name="planned_start" type="string"/>
+        <element attributes="import_attribute_name=product_owner,edge_encryption_enabled=true" label="Product owner" max_length="40" name="product_owner" type="string"/>
+        <element attributes="import_attribute_name=short_description,edge_encryption_enabled=true" label="Short description" max_length="40" name="short_description" type="string"/>
+        <element attributes="import_attribute_name=state,edge_encryption_enabled=true" label="State" max_length="40" name="state" type="string"/>
+        <element attributes="import_attribute_name=u_sys_id,edge_encryption_enabled=true" label="Sys_id" max_length="40" name="u_sys_id" type="string"/>
+        <element attributes="import_attribute_name=work_notes,edge_encryption_enabled=true" label="Work notes" max_length="40" name="work_notes" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>Impulse4_candidate</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-02-05 13:46:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>78f5979e37481b00ca23021a54990e08</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Impulse4_candidate</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_ui_view_78f5979e37481b00ca23021a54990e08</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-02-05 13:46:06</sys_updated_on>
+        <title>Impulse4_candidate</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

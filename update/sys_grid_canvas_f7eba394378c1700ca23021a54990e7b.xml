@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update node_type="sys_grid_canvas" unload_date="2018-08-23 13:34:38">
+    <sys_grid_canvas action="INSERT_OR_UPDATE">
+        <legacy_page display_value="PA New Tab">7beba394378c1700ca23021a54990e7a</legacy_page>
+        <name>PA New Tab</name>
+        <sys_class_name>sys_grid_canvas</sys_class_name>
+        <sys_created_by>transform.product.owner</sys_created_by>
+        <sys_created_on>2018-01-30 10:14:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f7eba394378c1700ca23021a54990e7b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PA New Tab</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_grid_canvas_f7eba394378c1700ca23021a54990e7b</sys_update_name>
+        <sys_updated_by>transform.product.owner</sys_updated_by>
+        <sys_updated_on>2018-01-30 10:14:18</sys_updated_on>
+    </sys_grid_canvas>
+</record_update>

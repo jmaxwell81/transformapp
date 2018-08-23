@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>c0d1bdd5db595b00aa4fb34ffe9619f0</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_pagr_paphos_tran_poker_room">
+    <x_pagr_paphos_tran_poker_room action="INSERT_OR_UPDATE">
+        <acceptance_criteria/>
+        <active>false</active>
+        <blocked>false</blocked>
+        <blocked_reason/>
+        <description/>
+        <expected_number_of_votes>3</expected_number_of_votes>
+        <name>Sprint 1 - CSM, PPM</name>
+        <number>PKR0001001</number>
+        <number_of_votes>0</number_of_votes>
+        <planned_end>2018-04-26 16:00:00</planned_end>
+        <planned_start>2018-04-05 06:00:00</planned_start>
+        <result/>
+        <short_description/>
+        <sprint display_value="Sprint 1 - CSM, PPM">880c893adb411700aa4fb34ffe96193a</sprint>
+        <state>1</state>
+        <story/>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-04-05 07:13:09</sys_created_on>
+        <sys_id>c0d1bdd5db595b00aa4fb34ffe9619f0</sys_id>
+        <sys_mod_count>159</sys_mod_count>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-04-05 08:57:03</sys_updated_on>
+        <work_notes/>
+    </x_pagr_paphos_tran_poker_room>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-08-23 13:29:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>189648eadb0023402c7d70600f9619f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PKR0001001</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_metadata_link_189648eadb0023402c7d70600f9619f7</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-08-23 13:29:39</sys_updated_on>
+        <tablename>x_pagr_paphos_tran_poker_room</tablename>
+    </sys_metadata_link>
+</record_update>

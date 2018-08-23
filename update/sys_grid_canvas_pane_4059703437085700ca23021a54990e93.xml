@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+        <grid_canvas display_value="PA New Tab 3">f539f03437085700ca23021a54990e69</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 31-01-2018 11:30:50">0459703437085700ca23021a54990e91</portal_widget>
+        <posx>6</posx>
+        <posy>0</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-31 10:30:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4059703437085700ca23021a54990e93</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>f539f03437085700ca23021a54990e69</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_4059703437085700ca23021a54990e93</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-31 10:31:10</sys_updated_on>
+        <width>6</width>
+    </sys_grid_canvas_pane>
+</record_update>

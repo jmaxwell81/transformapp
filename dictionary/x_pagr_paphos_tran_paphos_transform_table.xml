@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" label="Paphos Transform Table" max_length="40" name="x_pagr_paphos_tran_paphos_transform_table" type="collection">
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element default="javascript:var datum = new GlideDateTime();datum.addDaysUTC(21);datum.setValue(datum.getDate()+&quot; 18:00:00&quot;);datum.getValue();" label="Planned end" max_length="40" name="planned_end" type="glide_date_time"/>
+        <element default="javascript:var datum = new GlideDateTime();datum.setValue(datum.getDate()+&quot; 08:00:00&quot;);datum.getValue();" label="Planned start" max_length="40" name="planned_start" type="glide_date_time"/>
+        <element display="true" label="Short description" mandatory="true" max_length="100" name="short_description" type="string"/>
+        <element choice="1" default="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element label="Draft" sequence="1" value="1"/>
+                <element label="Planning" sequence="2" value="2"/>
+                <element label="Current" sequence="3" value="3"/>
+                <element label="Complete" sequence="4" value="4"/>
+                <element label="Cancelled" sequence="5" value="5"/>
+            </choice>
+        </element>
+        <element label="Work notes" max_length="4000" name="work_notes" type="journal_input"/>
+    </element>
+</database>

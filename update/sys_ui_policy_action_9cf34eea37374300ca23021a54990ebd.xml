@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>evaluation_type</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-24 16:10:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9cf34eea37374300ca23021a54990ebd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>evaluation_type</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_ui_policy_action_9cf34eea37374300ca23021a54990ebd</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-24 16:10:42</sys_updated_on>
+        <table>x_pagr_paphos_tran_rdacl</table>
+        <ui_policy display_value="TSF View for Lessons learned">0d10826a37374300ca23021a54990e40</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>

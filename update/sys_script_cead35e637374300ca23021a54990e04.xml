@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_pagr_paphos_tran_meeting</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_pagr_paphos_tran_meeting">state=15^ORstate=14^open_tasksCHANGESFROM1^open_tasksCHANGESTO0^NQstate=14^open_tasksISEMPTY^meeting_finishedCHANGESTOtrue^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="15"/>
+            <item endquery="false" field="state" goto="false" newquery="false" operator="=" or="true" value="14"/>
+            <item endquery="false" field="open_tasks" goto="false" newquery="false" operator="CHANGESFROM" or="false" value="1"/>
+            <item endquery="false" field="open_tasks" goto="false" newquery="false" operator="CHANGESTO" or="false" value="0"/>
+            <item endquery="false" field="state" goto="false" newquery="true" operator="=" or="false" value="14"/>
+            <item endquery="false" field="open_tasks" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="false" field="meeting_finished" goto="false" newquery="false" operator="CHANGESTO" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>TSF Complete when finished</name>
+        <order>300</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-24 15:44:23</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cead35e637374300ca23021a54990e04</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>TSF Complete when finished</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_script_cead35e637374300ca23021a54990e04</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-03-23 09:49:29</sys_updated_on>
+        <template>state=16^meeting_finished=true^EQ</template>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=cead35e637374300ca23021a54990e04"/>
+</record_update>

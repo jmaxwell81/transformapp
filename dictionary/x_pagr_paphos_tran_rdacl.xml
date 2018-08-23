@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" audit="true" extends="x_pagr_paphos_tran_paphos_transform_table" label="RDACL" max_length="40" name="x_pagr_paphos_tran_rdacl" type="collection">
+        <element label="Approved by Product Owner" max_length="40" name="approved_by_product_owner" type="boolean"/>
+        <element label="Approved by Srcum Master" max_length="40" name="approved_by_srcum_master" type="boolean"/>
+        <element choice="1" label="Condition" max_length="40" name="condition" type="string">
+            <choice>
+                <element label="Critical Success Factor" sequence="1" value="1"/>
+                <element label="Precondition" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element label="Estimated mitigation cost" max_length="20" name="estimated_mitigation_cost" type="currency"/>
+        <element choice="1" label="Evaluation type" max_length="40" name="evaluation_type" type="choice">
+            <choice>
+                <element label="Release retrospective" sequence="1" value="1"/>
+                <element label="Sprint retrospective" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element label="Mitigation" max_length="1000" name="mitigation" type="string"/>
+        <element choice="1" label="RDACL type" max_length="40" name="rdacl_type" type="choice">
+            <choice>
+                <element label="Risk" sequence="0" value="risk"/>
+                <element label="Decision" sequence="1" value="decision"/>
+                <element label="Assumption" sequence="2" value="assumption"/>
+                <element label="Condition" sequence="3" value="condition"/>
+                <element label="Lessons learned" sequence="4" value="lessons_learned"/>
+            </choice>
+        </element>
+        <element label="Release" max_length="32" name="release" reference="x_pagr_paphos_tran_release" type="reference"/>
+        <element choice="1" label="Responsible role" max_length="40" name="responsible_role" type="string">
+            <choice>
+                <element label="Product Owner" sequence="0" value="0"/>
+                <element label="Project Manager" sequence="1" value="2"/>
+                <element label="Scrum Master" sequence="2" value="1"/>
+            </choice>
+        </element>
+        <element label="Risk Owner" max_length="32" name="risk_owner" reference="x_pagr_paphos_tran_team_members" reference_floats="true" type="reference"/>
+        <element label="Sprint" max_length="32" name="sprint" reference="x_pagr_paphos_tran_sprint" type="reference"/>
+        <element label="What can we do better" max_length="4000" name="what_can_we_do_better" type="string"/>
+        <element label="What went well" max_length="4000" name="what_went_well" type="string"/>
+        <index name="index">
+            <element name="release"/>
+        </index>
+        <index name="index2">
+            <element name="sprint"/>
+        </index>
+        <index name="index3">
+            <element name="risk_owner"/>
+        </index>
+    </element>
+</database>

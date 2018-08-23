@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>Paphos Transform Table</name>
+        <order>500</order>
+        <roles>x_pagr_paphos_tran.transform_user,x_pagr_paphos_tran.transform_stakeholder</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-24 08:35:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6ccb146e373f4300a6e5c2f954990ea2</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Paphos Transform</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sys_app_application_6ccb146e373f4300a6e5c2f954990ea2</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-04-24 11:27:58</sys_updated_on>
+        <title>Paphos Transform</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

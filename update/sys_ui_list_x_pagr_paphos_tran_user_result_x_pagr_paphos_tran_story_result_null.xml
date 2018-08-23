@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="x_pagr_paphos_tran_story_result" relationship="" sys_domain="global" table="x_pagr_paphos_tran_user_result" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_pagr_paphos_tran_user_result" element="NULL" name="x_pagr_paphos_tran_user_result" parent="x_pagr_paphos_tran_story_result" relationship="NULL" sys_domain="global" view="Default view">b279086537cc9700ca23021a54990e4c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-02-02 14:57:19</sys_created_on>
+            <sys_id>3a79086537cc9700ca23021a54990e4c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-02-02 14:57:19</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>my_vote</element>
+            <list_id display_value="x_pagr_paphos_tran_user_result" element="NULL" name="x_pagr_paphos_tran_user_result" parent="x_pagr_paphos_tran_story_result" relationship="NULL" sys_domain="global" view="Default view">b279086537cc9700ca23021a54990e4c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-02-02 14:57:19</sys_created_on>
+            <sys_id>ba79086537cc9700ca23021a54990e4c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-02-02 14:57:19</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>team_member</element>
+            <list_id display_value="x_pagr_paphos_tran_user_result" element="NULL" name="x_pagr_paphos_tran_user_result" parent="x_pagr_paphos_tran_story_result" relationship="NULL" sys_domain="global" view="Default view">b279086537cc9700ca23021a54990e4c</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-02-02 14:57:19</sys_created_on>
+            <sys_id>3e79086537cc9700ca23021a54990e4c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-02-02 14:57:19</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_pagr_paphos_tran_user_result</name>
+            <parent>x_pagr_paphos_tran_story_result</parent>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-02-02 14:57:19</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b279086537cc9700ca23021a54990e4c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_pagr_paphos_tran_user_result</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_ui_list_x_pagr_paphos_tran_user_result_x_pagr_paphos_tran_story_result_null</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-02-02 14:57:19</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

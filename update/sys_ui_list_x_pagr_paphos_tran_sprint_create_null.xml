@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_pagr_paphos_tran_sprint_create" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>days_per_sprint</element>
+            <list_id display_value="x_pagr_paphos_tran_sprint_create" element="NULL" name="x_pagr_paphos_tran_sprint_create" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a765652637f34300ca23021a54990ed7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_id>2f65652637f34300ca23021a54990ed7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number_of_sprints</element>
+            <list_id display_value="x_pagr_paphos_tran_sprint_create" element="NULL" name="x_pagr_paphos_tran_sprint_create" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a765652637f34300ca23021a54990ed7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_id>af65652637f34300ca23021a54990ed7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>release</element>
+            <list_id display_value="x_pagr_paphos_tran_sprint_create" element="NULL" name="x_pagr_paphos_tran_sprint_create" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a765652637f34300ca23021a54990ed7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_id>2365652637f34300ca23021a54990ed8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sprint_0_needed</element>
+            <list_id display_value="x_pagr_paphos_tran_sprint_create" element="NULL" name="x_pagr_paphos_tran_sprint_create" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a765652637f34300ca23021a54990ed7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_id>a365652637f34300ca23021a54990ed8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>start_date</element>
+            <list_id display_value="x_pagr_paphos_tran_sprint_create" element="NULL" name="x_pagr_paphos_tran_sprint_create" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a765652637f34300ca23021a54990ed7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_id>2765652637f34300ca23021a54990ed8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_pagr_paphos_tran_sprint_create</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>jessica.snieder</sys_created_by>
+            <sys_created_on>2018-01-24 13:57:16</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a765652637f34300ca23021a54990ed7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_pagr_paphos_tran_sprint_create</sys_name>
+            <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+            <sys_update_name>sys_ui_list_x_pagr_paphos_tran_sprint_create_null</sys_update_name>
+            <sys_updated_by>jessica.snieder</sys_updated_by>
+            <sys_updated_on>2018-01-24 13:57:16</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

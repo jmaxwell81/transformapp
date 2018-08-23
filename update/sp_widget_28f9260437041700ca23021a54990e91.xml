@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+	var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.loader {&#13;
+    border: 16px solid #ffffff; /* White */&#13;
+    border-top: 16px solid #781073; /*  Paphos Purple */&#13;
+    border-radius: 50%;&#13;
+    width: 120px;&#13;
+    height: 120px;&#13;
+  margin: 0 auto;&#13;
+    animation: spin 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;&#13;
+}&#13;
+&#13;
+@keyframes spin {&#13;
+    0% { transform: rotate(0deg); }&#13;
+    100% { transform: rotate(360deg); }&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>load-diag</id>
+        <internal>false</internal>
+        <link/>
+        <name>Loading Dialog</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+data.wait = gs.getMessage("Please wait while we retrieve the latest data");
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 10:48:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>28f9260437041700ca23021a54990e91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Loading Dialog</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sp_widget_28f9260437041700ca23021a54990e91</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-29 10:48:18</sys_updated_on>
+        <template><![CDATA[<div align="center">
+  <h3>{{::data.wait}}</h3>
+</div>
+<div align="center" class="loader">
+</div>]]></template>
+    </sp_widget>
+</record_update>

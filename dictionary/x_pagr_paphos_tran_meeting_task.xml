@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true" extends="x_pagr_paphos_tran_paphos_transform_table" label="Meeting task" max_length="40" name="x_pagr_paphos_tran_meeting_task" type="collection">
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Follow up" max_length="400" name="follow_up" type="string"/>
+        <element label="Meeting" mandatory="true" max_length="32" name="meeting" reference="x_pagr_paphos_tran_meeting" type="reference"/>
+        <element label="Transfered" max_length="40" name="transfered" read_only="true" type="boolean"/>
+        <index name="index">
+            <element name="meeting"/>
+        </index>
+        <index name="index2">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+	/* widget controller */
+	var c = this;
+	$scope.header = c.data.header;
+	$scope.labels = c.data.labels;
+	$scope.series = ['Sprint trend','Ideal trend'];
+	$scope.data = [c.data.seriesfl , c.data.serieslin];
+	$scope.bijKlik = function (points, evt) {
+		console.log(points, evt);
+	};
+	$scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+		$scope.myOptions = {
+			scales: {
+				yAxes: [
+				{
+					id: 'y-axis-1',
+					type: 'linear',
+					display: true,
+					position: 'left'
+				},
+				{
+					id: 'y-axis-2',
+					type: 'linear',
+					display: true,
+					position: 'right'
+				}
+				]
+			},			
+			bezierCurve : false
+		};
+	}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>burndown</id>
+        <internal>false</internal>
+        <link/>
+        <name>Burndown</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.labels = [];
+	data.serieslin = [];
+	data.seriesfl = [];
+	data.header ='Burndown for Release: ';
+	var sprint = $sp.getParameter('sprint_sys_id');
+	var total = 0;
+	var numbDays = 0;
+	var gdt = new GlideDateTime();
+	var spr = new GlideRecord("x_pagr_paphos_tran_sprint");
+	if (!spr.get(sprint)){
+		spr.addQuery("planned_end",'>=',gdt.getLocalDate() + ' 23:59:59');
+		spr.addQuery("planned_start",'<=',gdt.getLocalDate()+ ' 00:00:00');
+		spr.query();
+		if (!spr.next()){
+			//no sprint found...
+		}
+	}
+	if (spr) {
+		data.header+= spr.release.getDisplayValue();
+		data.header+= ' and Sprint: ' + spr.short_description;
+		total = parseInt(spr.total_sprint_points);
+		//gs.info('de waarde is'+ spr.number + ' en totaal' + total);
+		var totalLin = total;
+		var totalFl = total;
+		var start = new GlideDateTime(spr.planned_start);
+		var end = new GlideDateTime(spr.planned_end);
+		var dur = new GlideDuration();
+		dur = new GlideDateTime.subtract(start,end);
+		var numbWorkDays = 0;
+		numbDays = parseInt(dur.getDayPart());
+		//gs.info('aantal dagen is '+numbDays);
+		
+		//Check on closed pre...
+		var sum1 = new GlideRecord('x_pagr_paphos_tran_story');
+		sum1.addQuery('closed_at','STARTSWITH',start.getLocalDate());
+		sum1.addQuery('sprint',spr.sys_id);
+		sum1.addQuery('state',3);
+		sum1.query();
+		var preClosed = 0;
+		while (sum1.next()){
+			preClosed += parseInt(sum1.points);
+		}
+		//gs.info(totalFl+' en preclosed' +preClosed);
+		totalFl=totalFl-preClosed;
+		
+		//first set is for free :-)
+		data.labels.push(String(start.getDate()));
+		data.seriesfl.push(String(totalFl));
+		data.serieslin.push(String(totalLin));
+		start.addDaysLocalTime(1);
+		var counter = 0;
+		//looping for sprint line
+		while (counter<numbDays){
+			//countng number of workdays.
+			if (start.getDayOfWeekUTC()!= '6' && start.getDayOfWeekUTC()!='7'){
+				numbWorkDays++;
+			}
+			//query for closed points
+			var sum = new GlideRecord('x_pagr_paphos_tran_story');
+			sum.addQuery('closed_at','STARTSWITH',start.getLocalDate());
+			sum.addQuery('sprint',spr.sys_id);
+			sum.addQuery('state',3);
+			sum.query();
+			var closed = 0;
+			while (sum.next()){
+				closed += parseInt(sum.points);
+			}
+			totalFl-=closed;
+			//pushing series and labels in.
+			data.seriesfl.push(String(totalFl));
+			data.labels.push(String(start.getDate()));
+			start.addDaysLocalTime(1);
+			counter++;
+		}
+		
+		//loop for ideal trend
+		var div = total/numbWorkDays;
+		//gs.info(div + ' de werkdagen '+numbWorkDays);
+		start = new GlideDateTime(spr.planned_start);
+		start.addDaysLocalTime(1);
+		counter = 0;
+		while (counter<numbDays-1) {
+			if (start.getDayOfWeekUTC()!= '6' && start.getDayOfWeekUTC()!='7'){
+				totalLin-=div;
+			}
+			data.serieslin.push(String(totalLin));
+			start.addDaysLocalTime(1);
+			counter++;
+		}
+		//making 0 us displayed
+		data.serieslin.push('0');
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-26 11:59:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ff9d930f373b8300ca23021a54990e9b</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Burndown</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>sp_widget_ff9d930f373b8300ca23021a54990e9b</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-02-01 11:24:46</sys_updated_on>
+        <template><![CDATA[<div>
+  <h2>{{::header}}</h2>
+<canvas id="line" class="chart chart-line" chart-data="data"
+chart-labels="labels" chart-series="series" chart-options="myOptions"
+chart-dataset-override="datasetOverride" chart-click="bijKlik">
+  </canvas>
+</div>]]></template>
+    </sp_widget>
+</record_update>

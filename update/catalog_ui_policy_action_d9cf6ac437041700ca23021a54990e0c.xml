@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Retrieve Impulse4 Releases">c619e2c037041700ca23021a54990e19</catalog_item>
+        <catalog_variable>IO:0b79e2c037041700ca23021a54990e22</catalog_variable>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>jessica.snieder</sys_created_by>
+        <sys_created_on>2018-01-29 11:13:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d9cf6ac437041700ca23021a54990e0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>loadSection</sys_name>
+        <sys_package display_value="Paphos Transform" source="x_pagr_paphos_tran">2214a8d637374300a6e5c2f954990e1b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Paphos Transform">2214a8d637374300a6e5c2f954990e1b</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_d9cf6ac437041700ca23021a54990e0c</sys_update_name>
+        <sys_updated_by>jessica.snieder</sys_updated_by>
+        <sys_updated_on>2018-01-29 11:13:03</sys_updated_on>
+        <table/>
+        <ui_policy display_value="TSF Hide while loading">e3bfe6c437041700ca23021a54990eb3</ui_policy>
+        <variable>loadSection</variable>
+        <variable_set/>
+        <visible>true</visible>
+    </catalog_ui_policy_action>
+</record_update>
